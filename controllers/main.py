@@ -94,6 +94,13 @@ class AtiserviceProviderBeneficiaryManagement(G2PServiceProviderBeneficiaryManag
             .selection_ids
         )
 
+        is_member_of_cooperative_union = (
+            request.env["ir.model.fields"]
+            .sudo()
+            .search([("model_id", "=", model_id.id), ("name", "=", "is_member_of_primary_cooperative")])
+            .selection_ids
+        )
+
         role_in_cluster = (
             request.env["ir.model.fields"]
             .sudo()
@@ -112,90 +119,25 @@ class AtiserviceProviderBeneficiaryManagement(G2PServiceProviderBeneficiaryManag
             .search([("model_id", "=", model_id.id), ("name", "=", "access_to_machinery")])
             .selection_ids
         )
-        # disability = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "disability")])
-        #     .selection_ids
-        # )
-        # education = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "education")])
-        #     .selection_ids
-        # )
-        # spend_night = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "spend_night")])
-        #     .selection_ids
-        # )
-        # source_income = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "source_income")])
-        #     .selection_ids
-        # )
-        # earn_per = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "earn_per")])
-        #     .selection_ids
-        # )
-        # saving_experience = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "saving_experience")])
-        #     .selection_ids
-        # )
-        # received_any_assistance = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "received_any_assistance")])
-        #     .selection_ids
-        # )
-        # inistitutes = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "inistitutes")])
-        #     .selection_ids
-        # )
-        # current_source_income = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "current_source_income")])
-        #     .selection_ids
-        # )
-        # current_earn_per = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "current_earn_per")])
-        #     .selection_ids
-        # )
-        # current_received_any_assistance = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "current_received_any_assistance")])
-        #     .selection_ids
-        # )
-        # current_institutes = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "current_institutes")])
-        #     .selection_ids
-        # )
-        # additional_support = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "additional_support")])
-        #     .selection_ids
-        # )
-        # enumerator_consent = (
-        #     request.env["ir.model.fields"]
-        #     .sudo()
-        #     .search([("model_id", "=", model_id.id), ("name", "=", "enumerator_consent")])
-        #     .selection_ids
-        # )
+        no_finace_access = (
+            request.env["ir.model.fields"]
+            .sudo()
+            .search([("model_id", "=", model_id.id), ("name", "=", "no_finace_access")])
+            .selection_ids
+        )
+        martial_status = (
+            request.env["ir.model.fields"]
+            .sudo()
+            .search([("model_id", "=", model_id.id), ("name", "=", "martial_status")])
+            .selection_ids
+        )
+        education_level = (
+            request.env["ir.model.fields"]
+            .sudo()
+            .search([("model_id", "=", model_id.id), ("name", "=", "education")])
+            .selection_ids
+        )
+
         # user_name = request.env.user.name
 
 
@@ -213,6 +155,7 @@ class AtiserviceProviderBeneficiaryManagement(G2PServiceProviderBeneficiaryManag
                 "primary_language": primary_language,
                 "farming_type": farming_type,
                 "is_member_of_primary_cooperative": is_member_of_primary_cooperative,
+                "is_member_of_cooperative_union": is_member_of_cooperative_union,
                 "primary_cooperatives": primary_cooperatives,
                 "cooperative_unions": cooperative_unions,
                 "primary_commodities": primary_commodities,
@@ -226,16 +169,10 @@ class AtiserviceProviderBeneficiaryManagement(G2PServiceProviderBeneficiaryManag
                 "water_source": water_source,
                 "access_to_machinery": access_to_machinery,
                 "machinary_types": machinary_types,
-                # "received_any_assistance": received_any_assistance,
-                # "inistitutes": inistitutes,
-                # "current_source_income": current_source_income,
-                # "current_earn_per": current_earn_per,
-                # "current_received_any_assistance": current_received_any_assistance,
-                # "current_institutes": current_institutes,
-                # "additional_support_options": additional_support_options,
-                # "enumerator_consent": enumerator_consent,
-                # "additional_support": additional_support,
-                # "user_name": user_name,
+                "no_finace_access": no_finace_access,
+                "martial_status": martial_status,
+                "education_level": education_level,
+
             },
         )
 
