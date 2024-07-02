@@ -358,8 +358,9 @@ $(document).ready(function () {
     emailInput.parentNode.appendChild(emailError);
 
     uidInput.addEventListener("input", function () {
+        console.log("hey hey")
         if (uidInput.value.length !== 12 && uidInput.value.length !== 0) {
-            uidInput.classList.add("is-invalid");
+            uidInput.classList.add("uid_error");
             uidError.style.display = "block";
         } else {
             uidInput.classList.remove("is-invalid");
