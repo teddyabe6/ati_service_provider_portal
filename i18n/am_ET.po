@@ -1,0 +1,641 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* g2p_ati_service_provider_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-04 07:37+0000\n"
+"PO-Revision-Date: 2024-07-04 07:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "<span class=\"heading-text\">Address</span>"
+msgstr "አድራሻ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                                Given\n"
+"                                                                                Name\n"
+"                                                                            </span>\n"
+"                                                                            <span class=\"s_website_form_mark\">\n"
+"                                                                                *\n"
+"                                                                            </span>"
+msgstr "ስም"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                                Grand\n"
+"                                                                                Father's\n"
+"                                                                                Name</span>\n"
+"                                                                            <span class=\"s_website_form_mark\">\n"
+"                                                                                *</span>"
+msgstr "የአያት ስም"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                            Do you have a Phone No?\n"
+"                                                                        </span>"
+msgstr "ስልክ ቁጥር አለህ?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                            Farming Type\n"
+"                                                                        </span>"
+msgstr "የእርሻ ዓይነት"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                            Kebele\n"
+"                                                                        </span>\n"
+"                                                                        <span class=\"s_website_form_mark\">\n"
+"                                                                            *\n"
+"                                                                        </span>"
+msgstr "ቀበሌ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                            Please Provide You Contact Number\n"
+"                                                                        </span>"
+msgstr "እባክዎን የመገኛ ቁጥርዎን ያቅርቡ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                            Primary Phone Number\n"
+"                                                                        </span>\n"
+"                                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ዋና ስልክ ቁጥር"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                            email\n"
+"                                                                        </span>\n"
+"                                                                        <span class=\"s_website_form_mark\">\n"
+"                                                                            *\n"
+"                                                                        </span>"
+msgstr "ኢሜይል"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                           Secondary Phone Number\n"
+"                                                                        </span>\n"
+"                                                                        <span class=\"s_website_form_mark\">\n"
+"                                                                            *\n"
+"                                                                        </span>"
+msgstr "ሁለተኛ ስልክ ቁጥር"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    Are you a member of cooperative union?\n"
+"                                                                </span>"
+msgstr "የህብረት ስራ ማህበር አባል ነህ?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    Are you registered in a farmer cluster?\n"
+"                                                                </span>"
+msgstr "በገበሬ ስብስብ ውስጥ ተመዝግበዋል?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    Given\n"
+"                                                                    Name\n"
+"                                                                </span>\n"
+"                                                                <span class=\"s_website_form_mark\">\n"
+"                                                                    *\n"
+"                                                                </span>"
+msgstr "ስም"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    Father's\n"
+"                                                                    Name\n"
+"                                                                </span>\n"
+"                                                                <span class=\"s_website_form_mark\">\n"
+"                                                                    *\n"
+"                                                                </span>"
+msgstr "የአባት ስም"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    Grand\n"
+"                                                                    Father's\n"
+"                                                                    Name</span>\n"
+"                                                                <span class=\"s_website_form_mark\">\n"
+"                                                                    *</span>"
+msgstr "የአያት ስም"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    Is the Farmer  a member of primary cooperative ?\n"
+"                                                                </span>"
+msgstr "አርሶ አደሩ የመጀመሪያ ደረጃ ህብረት ስራ ማህበር አባል ነው?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    What is the name of the cooperative ?\n"
+"                                                                </span>"
+msgstr "የህብረት ሥራ ማህበሩ ስም ማን ይባላል?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                   What is the name of the cooperative union?\n"
+"                                                                </span>"
+msgstr "የህብረት ሥራ ማህበሩ ስም ማን ይባላል?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                   What is the primary commodity?\n"
+"                                                                </span>"
+msgstr "ዋናው ምርት ምንድን ነው?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                   What is your role in the cluster?\n"
+"                                                                </span>"
+msgstr "በክላስተር ውስጥ የእርስዎ ሚና ምንድነው?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                Do you have a Phone No?\n"
+"                                                            </span>"
+msgstr "ስልክ ቁጥር አለህ?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                Email\n"
+"                                                            </span>\n"
+"                                                            <span class=\"s_website_form_mark\">\n"
+"                                                                *\n"
+"                                                            </span>"
+msgstr "ኢሜይል"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                Farming Type\n"
+"                                                            </span>"
+msgstr "የእርሻ ዓይነት"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                            Are you a member of cooperative union?\n"
+"                                                        </span>"
+msgstr "የህብረት ስራ ማህበር አባል ነህ?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                            Are you registered in a farmer cluster?\n"
+"                                                        </span>"
+msgstr "በገበሬ ስብስብ ውስጥ ተመዝግበዋል?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                            Is the Farmer  a member of primary cooperative ?\n"
+"                                                        </span>"
+msgstr "አርሶ አደሩ የመጀመሪያ ደረጃ ህብረት ስራ ማህበር አባል ነው?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                            What is the name of the cooperative ?\n"
+"                                                        </span>"
+msgstr "የህብረት ሥራ ማህበሩ ስም ማን ይባላል?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                           What is the name of the cooperative union?\n"
+"                                                        </span>"
+msgstr "የህብረት ሥራ ማህበሩ ስም ማን ይባላል?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                           What is the primary commodity?\n"
+"                                                        </span>"
+msgstr "ዋናው ምርት ምንድን ነው?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                           What is your role in the cluster?\n"
+"                                                        </span>"
+msgstr "በክላስተር ውስጥ የእርስዎ ሚና ምንድነው?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">Date of\n"
+"                                                                            Birth\n"
+"                                                                        </span>"
+msgstr "የተወለደበት ቀን"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">Date of\n"
+"                                                                Birth\n"
+"                                                            </span>"
+msgstr "የተወለደበት ቀን"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">Do you have a\n"
+"                                                            national ID?\n"
+"                                                        </span>"
+msgstr "ብሄራዊ መታወቂያ አለህ?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">Father's\n"
+"                                                                                Name</span>\n"
+"                                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr "የአባት ስም"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">Father's\n"
+"                                                                    Name</span>\n"
+"                                                                <span class=\"s_website_form_mark\"> *</span>"
+msgstr "የአባት ስም"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">Kebele\n"
+"                                                            </span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ቀበሌ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">RID\n"
+"                                                        </span>"
+msgstr "የምዝገባ መታወቂያ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">UID\n"
+"                                                        </span>\n"
+"                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ልዩ መለያ ቁጥር"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">id holder\n"
+"                                                                </span>"
+msgstr "መታወቂያ ያዥ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                                Primary Language</span>\n"
+"                                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ዋና ቋንቋ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                            Gender</span>\n"
+"                                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ጾታ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                            Region</span>\n"
+"                                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ክልል"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                            Woreda</span>\n"
+"                                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ወረዳ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                            Zone</span>\n"
+"                                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ዞን"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                     What is your water source?\n"
+"                                                                </span>"
+msgstr "የውሃ ምንጭህ ምንድን ነው?"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                    Primary Language</span>\n"
+"                                                                <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ዋና ቋንቋ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                Gender</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ጾታ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                Region</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ክልል"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                Woreda</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ወረዳ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                Zone</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr "ዞን"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Actions"
+msgstr "ድርጊት"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Add a Line"
+msgstr "መስመር ጨምር"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Basic Information"
+msgstr "መሰረታዊ መረጃ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Cancel"
+msgstr "ሰርዝ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Commodity Name"
+msgstr "የሸቀጦች ስም"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Create New Farmer"
+msgstr "አዲስ ገበሬ ፍጠር"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Crop Information"
+msgstr "የሰብል መረጃ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Dashboard"
+msgstr "ዳሽቦርድ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Date of Birth"
+msgstr "የልደት ቀን"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Disease"
+msgstr "በሽታ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Family Members"
+msgstr "የቤተሰብ አባላት"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Farmer"
+msgstr "ገበሬ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "First Name"
+msgstr "ስም"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Gender"
+msgstr "ጾታ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "ID Section"
+msgstr "የመታወቂያ ክፍል"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Individual Details"
+msgstr "የግለሰብ ዝርዝሮች"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Land Certification"
+msgstr "የመሬት ማረጋገጫ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Land ID"
+msgstr "የመሬት መታወቂያ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Land Information"
+msgstr "የመሬት መረጃ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Land Ownership Type"
+msgstr "የመሬት ባለቤትነት አይነት"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Last Name"
+msgstr "የአያት ስም"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Membership Details"
+msgstr "የአባልነት ዝርዝሮች"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Phone Number Must Be 10 Digits"
+msgstr "ስልክ ቁጥር 10 አሃዝ መሆን አለበት።"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Primary Phone"
+msgstr "ዋና ስልክ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "RID"
+msgstr "የተመዝጋቢ መታወቂያ ቁጥር"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Remove"
+msgstr "አስወግድ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Secondary phone number"
+msgstr "ሁለተኛ ስልክ ቁጥር"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Submit"
+msgstr "አስገባ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Total Land Area"
+msgstr "ጠቅላላ የመሬት ስፋት"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Type"
+msgstr "ዓይነት"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "UID"
+msgstr "ልዩ መታወቂያ ቁጥር"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"UID must be\n"
+"                                                    exactly 12 characters long."
+msgstr "ልዩ የመታወቂያ ቁጥር በትክክል 12 አሃዞች ርዝመት ሊኖረው ይገባል።"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Update Farmer"
+msgstr "የገበሬውን ፕሮፋይል ቀይር"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "YYYY-MM-DD"
+msgstr "ዓዓዓ-ወወ-ቀን"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "id holder"
+msgstr "መታወቂያ ያዥ"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "kebele"
+msgstr "ቀበሌ"

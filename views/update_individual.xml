@@ -1,0 +1,1708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template
+        id="ati_individual_registrant_update_form_template"
+        inherit_id="g2p_service_provider_beneficiary_management.individual_update_form_template"
+        customize_show="True"
+        name="ati"
+        priority="200">
+
+        <xpath expr="//div[hasclass('main-container')]" position="replace">
+            <div class="container-adjuster">
+                <h5 class="all-title">Update Farmer</h5>
+                <div class="form-template">
+
+                    <ol class="breadcrumb form-layout-breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/serviceprovider/home">
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="/serviceprovider/individual">
+                                Farmer
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Update Farmer
+                        </li>
+                    </ol>
+
+
+                    <form
+                        id="updategroupForm"
+                        action="/serviceprovider/individual/update/submit"
+                        method="POST"
+                        enctype="multipart/form-data">
+
+                        <input type="hidden" name="group_id" value="" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div
+                                    class="card container-left"
+                                    id="accordion"
+                                    style="width: auto; padding: 0px;" >
+
+                                    <!-- <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button card-header form-card-header"
+                                                style="padding:15px;font-weight:500;"
+                                                id="id-section-header"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#id_section"
+                                                aria-expanded="false"
+                                                aria-controls="#id_section">
+                                                ID Information
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div
+                                        class="s_website_form_rows collapse hide"
+                                        id="id_section"
+                                        data-bs-parent="#accordion" >
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="s_website_form_field">
+                                                    <label class="s_website_form_label" for="name">
+                                                        <span class="s_website_form_label_content" style="color: #666666;">
+                                                            Do you have a national ID?
+                                                        </span>
+                                                    </label>
+                                                    <select
+                                                        class="form-select"
+                                                        name="have_national_id"
+                                                        required="required"
+                                                        id="have-national-id-selection">
+                                                        <option value=" ">Select</option>
+                                                        <t  t-foreach="have_national_id"
+                                                            t-as="option">
+
+                                                            <option t-att-value="option.id">
+                                                                <t t-esc="option.name" />
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div
+                                                    class="s_website_form_field"
+                                                    id="uid-div"
+                                                    style="display: none;">
+                                                    <label class="s_website_form_label" for="name">
+                                                        <span
+                                                            class="s_website_form_label_content"
+                                                            style="color: #666666;"
+                                                        >UID
+                                                        </span>
+                                                        <span
+                                                            class="s_website_form_mark"
+                                                        > *</span>
+
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        id="uid_input"
+                                                        name="uid"
+                                                        class="form-control"
+                                                        placeholder="UID"
+                                                        required="required"/>
+                                                </div>
+                                                <div
+                                                    class="error-message"
+                                                    id="uid_error"
+                                                    style="display: none;color: red;">
+                                                    UID must be
+                                                    exactly 12 characters long.
+                                                </div>
+                                                <div
+                                                    class="s_website_form_field"
+                                                    id="rid-div"
+                                                    style="display: none;">
+                                                    <label class="s_website_form_label" for="name">
+                                                        <span
+                                                            class="s_website_form_label_content"
+                                                            style="color: #666666;">
+                                                            RID
+                                                        </span>
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        id="rid_input"
+                                                        name="rid"
+                                                        class="form-control"
+                                                        placeholder="RID"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button card-header form-card-header"
+                                            style="padding:15px;font-weight:500;"
+                                            id="household_header"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#general_information"
+                                            aria-expanded="false"
+                                            aria-controls="demographic">
+                                            Basic Information
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div class="card-body" style="padding: 0px;">
+                                    <div
+                                        class="s_website_form_rows collapse hide"
+                                        id="general_information"
+                                        data-bs-parent="#accordion">
+                                        <div class="row">
+                                            <div class="col-lg-18">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div class="s_website_form_field">
+                                                            <label class="s_website_form_label">
+                                                                <span class="s_website_form_label_content">
+                                                                    Primary Language</span>
+                                                                <span class="s_website_form_mark"> *</span>
+                                                            </label>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <select
+                                                                        class="form-select"
+                                                                        name="priamary_language"
+                                                                        required="required" >
+                                                                        <option value="">Select</option>
+                                                                        <t t-foreach="primary_language" t-as="option">
+                                                                            <option t-att-value="option.id"
+                                                                            t-att-selected="option.id == beneficiary.primary_Language.id" >
+                                                                                <t t-esc="option.name" />
+                                                                            </option>
+                                                                        </t>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div
+                                                            class="s_website_form_field">
+                                                            <label
+                                                                class="s_website_form_label"
+                                                                for="given_name">
+                                                                <span
+                                                                    class="s_website_form_label_content"
+                                                                    style="color: #666666;">
+                                                                    Given
+                                                                    Name
+                                                                </span>
+                                                                <span
+                                                                    class="s_website_form_mark">
+                                                                    *
+                                                                </span>
+                                                            </label>
+
+                                                            <input
+                                                                type="text"
+                                                                id="given_name"
+                                                                name="given_name"
+                                                                class="form-control"
+                                                                required="required"
+                                                                t-att-value="beneficiary.given_name"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div
+                                                            class="s_website_form_field"
+                                                        >
+                                                            <label
+                                                                class="s_website_form_label"
+                                                                for="addl_name"
+                                                            >
+                                                                <span
+                                                                    class="s_website_form_label_content"
+                                                                    style="color: #666666;"
+                                                                >Father's
+                                                                    Name</span>
+                                                                <span
+                                                                    class="s_website_form_mark"
+                                                                > *</span>
+
+                                                            </label>
+                                                            <input
+                                                                type="text"
+                                                                id="addl_name"
+                                                                name="addl_name"
+                                                                class="form-control"
+                                                                required="required"
+                                                                t-att-value="beneficiary.family_name"
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-4">
+                                                        <div class="s_website_form_field">
+                                                            <label
+                                                                class="s_website_form_label"
+                                                                for="family_name">
+                                                                <span
+                                                                    class="s_website_form_label_content"
+                                                                    style="color: #666666;">
+                                                                    Grand
+                                                                    Father's
+                                                                    Name</span>
+                                                                <span class="s_website_form_mark" >
+                                                                    *</span>
+                                                            </label>
+                                                            <input
+                                                                type="text"
+                                                                id="family_name"
+                                                                name="family_name"
+                                                                class="form-control"
+                                                                required="required"
+                                                                t-att-value="beneficiary.gf_name_eng" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div
+                                                            class="s_website_form_field">
+                                                            <label
+                                                                class="s_website_form_label"
+                                                                for="given_name">
+                                                                <span
+                                                                    class="s_website_form_label_content"
+                                                                    style="color: #666666;">
+                                                                    ስም
+                                                                </span>
+                                                                <span
+                                                                    class="s_website_form_mark">
+                                                                    *
+                                                                </span>
+                                                            </label>
+
+                                                            <input
+                                                                type="text"
+                                                                id="given_name"
+                                                                name="given_name"
+                                                                class="form-control"
+                                                                required="required"
+                                                                t-att-value="beneficiary.first_name_amh"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div
+                                                            class="s_website_form_field"
+                                                        >
+                                                            <label
+                                                                class="s_website_form_label"
+                                                                for="addl_name"
+                                                            >
+                                                                <span
+                                                                    class="s_website_form_label_content"
+                                                                    style="color: #666666;">
+                                                                    የአባት ስም
+                                                                </span>
+                                                                <span
+                                                                    class="s_website_form_mark"
+                                                                > *</span>
+
+                                                            </label>
+                                                            <input
+                                                                type="text"
+                                                                id="addl_name"
+                                                                name="addl_name"
+                                                                class="form-control"
+                                                                required="required"
+                                                                t-att-value="beneficiary.family_name_amh"
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-4">
+                                                        <div class="s_website_form_field">
+                                                            <label
+                                                                class="s_website_form_label"
+                                                                for="family_name">
+                                                                <span
+                                                                    class="s_website_form_label_content"
+                                                                    style="color: #666666;">
+                                                                    የአያት ስም
+                                                                </span>
+                                                                <span class="s_website_form_mark" >
+                                                                    *</span>
+                                                            </label>
+                                                            <input
+                                                                type="text"
+                                                                id="family_name"
+                                                                name="family_name"
+                                                                class="form-control"
+                                                                required="required"
+                                                                t-att-value="beneficiary.gf_name_amh" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="row">
+
+                                                <div
+                                                    class="col-lg-12 container-fluid heading-header">
+                                                    <span
+                                                        class="heading-text"
+                                                    >Address</span>
+                                                </div>
+
+                                                <div class="col-lg-5 left-margin-input">
+
+                                                    <div
+                                                        class="s_website_form_field lmargin-input"
+                                                        style="margin-right: -17%">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                Region</span>
+                                                            <span
+                                                                class="s_website_form_mark"
+                                                            > *</span>
+                                                        </label>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <select
+                                                                    id="region_selection"
+                                                                    class="form-select"
+                                                                    name="region"
+                                                                    required="required"
+                                                                >
+                                                                    <option value=" ">Select</option>
+                                                                    <t
+                                                                        t-foreach="region"
+                                                                        t-as="option"
+                                                                    >
+                                                                        <option
+                                                                            t-att-value="option.id"
+                                                                            t-att-selected="option.id == beneficiary.regionn.id"
+                                                                        >
+                                                                            <t t-esc="option.name" />
+                                                                        </option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-lg-5 left-margin-input">
+                                                    <div
+                                                        class="s_website_form_field lmargin-input"
+                                                        style="margin-right: -17%"
+                                                    >
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                Zone</span>
+                                                            <span class="s_website_form_mark"> *</span>
+                                                        </label>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <select
+                                                                    id="zon_selection"
+                                                                    class="form-select"
+                                                                    name="zone"
+                                                                    required="required"
+                                                                >
+                                                                    <option value=" ">Select</option>
+                                                                    <t t-foreach="zone"
+                                                                        t-as="option">
+                                                                        <option
+                                                                            t-att-value="option.id"
+                                                                            t-att-selected="option.id == beneficiary.zone.id">
+                                                                            <t t-esc="option.name" />
+                                                                        </option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    <div
+                                                        class="s_website_form_field lmargin-input"
+                                                        style="margin-right: -17%"
+                                                    >
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                Woreda</span>
+                                                            <span class="s_website_form_mark"> *</span>
+                                                        </label>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <select
+                                                                    id="woreda_selection"
+                                                                    class="form-select"
+                                                                    name="woreda"
+                                                                >
+                                                                    <option value=" ">Select</option>
+                                                                    <t t-foreach="wereda"
+                                                                        t-as="option">
+                                                                        <option
+                                                                            t-att-value="option.id"
+                                                                            t-att-selected="option.id == beneficiary.woreda.id">
+                                                                            <t t-esc="option.name" />
+                                                                        </option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    <div
+                                                        class="s_website_form_field lmargin-input"
+                                                        style="margin-right: -17%"
+                                                    >
+                                                        <label
+                                                            class="s_website_form_label"
+                                                            for="name"
+                                                        >
+                                                            <span
+                                                                class="s_website_form_label_content"
+                                                                style="color: #666666;"
+                                                            >Kebele
+                                                            </span>
+                                                            <span
+                                                                class="s_website_form_mark"
+                                                            > *</span>
+                                                        </label>
+                                                        <input
+                                                            type="text"
+                                                            id="kebele"
+                                                            name="kebele"
+                                                            class="form-control"
+                                                            placeholder="kebele"
+                                                            required="required"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="row">
+
+                                                <div class="col-lg-5">
+                                                    <div class="s_website_form_field">
+                                                        <label
+                                                            class="s_website_form_label"
+                                                            for="birthdate"
+                                                        >
+                                                            <span
+                                                                class="s_website_form_label_content"
+                                                                style="color: #666666;"
+                                                            >Date of
+                                                                Birth
+                                                            </span>
+                                                        </label>
+                                                        <input
+                                                            type="date"
+                                                            id="birthdate"
+                                                            name="birthdate"
+                                                            class="form-control date-picker"
+                                                            required="required"
+                                                            placeholder="YYYY-MM-DD"
+                                                            t-att-value="beneficiary.birthdate"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span class="s_website_form_label_content">
+                                                                Gender</span>
+                                                            <span class="s_website_form_mark"> *</span>
+                                                        </label>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <select
+                                                                    class="form-select"
+                                                                    name="gender"
+                                                                    required="required" >
+                                                                    <option value="">Select</option>
+                                                                    <t t-foreach="gender" t-as="option">
+                                                                        <option t-att-value="option.value"
+                                                                        t-att-selected="option.value == beneficiary.gender">
+                                                                            <t t-esc="option.code" />
+                                                                        </option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label" for="name">
+                                                            <span class="s_website_form_label_content" style="color: #666666;">
+                                                                Do you have a Phone No?
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="have_national_id"
+                                                            required="required"
+                                                            id="have-national-id-selection">
+                                                            <option value=" ">Select</option>
+                                                            <t  t-foreach="have_national_id"
+                                                                t-as="option">
+
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-lg-5">
+                                                    <div
+                                                        class="s_website_form_field"
+                                                        id="uid-div"
+                                                        style="display: none;">
+                                                        <label class="s_website_form_label" for="name">
+                                                            <span
+                                                                class="s_website_form_label_content"
+                                                                style="color: #666666;"
+                                                            >
+                                                                Primary Phone Number
+                                                            </span>
+                                                            <span
+                                                                class="s_website_form_mark"
+                                                            > *</span>
+
+                                                        </label>
+                                                        <input
+                                                            type="text"
+                                                            id="uid_input"
+                                                            name="uid"
+                                                            class="form-control"
+                                                            placeholder="UID"
+                                                            required="required"/>
+                                                    </div>
+                                                    <div
+                                                        class="error-message"
+                                                        id="uid_error"
+                                                        style="display: none;color: red;">
+                                                       Phone Number Must Be 10 Digits
+                                                    </div>
+                                                    <div
+                                                        class="s_website_form_field"
+                                                        id="rid-div"
+                                                        style="display: none;">
+                                                        <label class="s_website_form_label" for="name">
+                                                            <span
+                                                                class="s_website_form_label_content"
+                                                                style="color: #666666;">
+                                                                Please Provide You Contact Number
+                                                            </span>
+                                                        </label>
+                                                        <input
+                                                            type="text"
+                                                            id="rid_input"
+                                                            name="rid"
+                                                            class="form-control"
+                                                            placeholder="RID"/>
+                                                    </div>
+
+                                                    <div  class="s_website_form_field">
+                                                        <label
+                                                            class="s_website_form_label"
+                                                            for="given_name">
+                                                            <span
+                                                                class="s_website_form_label_content"
+                                                                style="color: #666666;">
+                                                               Secondary Phone Number
+                                                            </span>
+                                                            <span
+                                                                class="s_website_form_mark">
+                                                                *
+                                                            </span>
+                                                        </label>
+
+                                                        <input
+                                                            type="text"
+                                                            id="given_name"
+                                                            name="given_name"
+                                                            class="form-control"
+                                                            required="required"/>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                     <div  class="s_website_form_field">
+                                                        <label
+                                                            class="s_website_form_label"
+                                                            for="given_name">
+                                                            <span
+                                                                class="s_website_form_label_content"
+                                                                style="color: #666666;">
+                                                                Email
+                                                            </span>
+                                                            <span
+                                                                class="s_website_form_mark">
+                                                                *
+                                                            </span>
+                                                        </label>
+
+                                                        <input
+                                                            type="text"
+                                                            id="given_name"
+                                                            name="given_name"
+                                                            class="form-control"
+                                                            required="required"
+                                                            t-att-value="beneficiary.email"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label" for="name">
+                                                            <span class="s_website_form_label_content" style="color: #666666;">
+                                                                Farming Type
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="have_national_id"
+                                                            required="required"
+                                                            id="have-national-id-selection">
+                                                            <option value=" ">Select</option>
+                                                            <t  t-foreach="farming_type"
+                                                                t-as="option">
+
+                                                                <option t-att-value="option.id"
+                                                                t-att-selected="option.id == farming_type_selection_id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button card-header form-card-header"
+                                                style="padding:15px;font-weight:500;"
+                                                id="general_info"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#membership_details"
+                                                aria-expanded="false"
+                                                aria-controls="#contact_details" >
+                                                Membership Details
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div
+                                        class="s_website_form_rows collapse hide"
+                                        id="membership_details"
+                                        data-bs-parent="#accordion">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <div class="s_website_form_field">
+                                                    <label class="s_website_form_label" for="name">
+                                                        <span class="s_website_form_label_content" style="color: #666666;">
+                                                            Is the Farmer  a member of primary cooperative ?
+                                                        </span>
+                                                    </label>
+                                                    <select
+                                                        class="form-select"
+                                                        name="have_national_id"
+                                                        required="required"
+                                                        id="have-national-id-selection">
+                                                        <option value=" ">Select</option>
+                                                        <t  t-foreach="is_member_of_primary_cooperative"
+                                                            t-as="option">
+                                                            <option t-att-value="option.id"
+                                                            t-att-selected="option.id == is_member_of_primary_cooperative_selection_id">
+                                                                <t t-esc="option.name" />
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="s_website_form_field">
+                                                    <label class="s_website_form_label" for="name">
+                                                        <span class="s_website_form_label_content" style="color: #666666;">
+                                                            What is the name of the cooperative ?
+                                                        </span>
+                                                    </label>
+                                                    <select
+                                                        class="form-select"
+                                                        name="have_national_id"
+                                                        required="required"
+                                                        id="have-national-id-selection">
+                                                        <option value=" ">Select</option>
+                                                        <t  t-foreach="primary_cooperatives"
+                                                            t-as="option">
+                                                            <option t-att-value="option.id"
+                                                            t-att-selected="option.id == beneficiary.primary_cooperatives.id">
+                                                                <t t-esc="option.name" />
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <div class="s_website_form_field">
+                                                    <label class="s_website_form_label" for="name">
+                                                        <span class="s_website_form_label_content" style="color: #666666;">
+                                                            Are you a member of cooperative union?
+                                                        </span>
+                                                    </label>
+                                                    <select
+                                                        class="form-select"
+                                                        name="have_national_id"
+                                                        required="required"
+                                                        id="have-national-id-selection">
+                                                        <option value=" ">Select</option>
+                                                        <t  t-foreach="is_member_of_cooperative_union"
+                                                            t-as="option">
+                                                            <option t-att-value="option.id"
+                                                            t-att-selected="option.id == is_member_of_cooperative_union_selection_id">
+                                                                <t t-esc="option.name" />
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div
+                                                        class="s_website_form_field"
+                                                        style="display: none;"
+                                                    >
+                                                            <label class="s_website_form_label" for="name">
+                                                                <span
+                                                                class="s_website_form_label_content"
+                                                                style="color: #666666;"
+                                                            >id holder
+                                                                </span>
+
+                                                            </label>
+                                                            <input
+                                                            type="text"
+                                                            id="id_holder"
+                                                            name="id holder"
+                                                            class="form-control"
+                                                            placeholder="id holder"
+                                                            t-att-value="beneficiary.id"
+                                                        />
+                                                        </div>
+                                                <div class="s_website_form_field">
+                                                    <label class="s_website_form_label" for="name">
+                                                        <span class="s_website_form_label_content" style="color: #666666;">
+                                                           What is the name of the cooperative union?
+                                                        </span>
+                                                    </label>
+                                                    <select
+                                                        class="form-select"
+                                                        name="have_national_id"
+                                                        required="required"
+                                                        id="have-national-id-selection">
+                                                        <option value=" ">Select</option>
+                                                        <t  t-foreach="cooperative_unions"
+                                                            t-as="option">
+                                                            <option t-att-value="option.id"
+                                                            t-att-selected="option.id == beneficiary.cooperative_unions.id">
+                                                                <t t-esc="option.name" />
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <div class="s_website_form_field">
+                                                    <label class="s_website_form_label" for="name">
+                                                        <span class="s_website_form_label_content" style="color: #666666;">
+                                                            Are you registered in a farmer cluster?
+                                                        </span>
+                                                    </label>
+                                                    <select
+                                                        class="form-select"
+                                                        name="have_national_id"
+                                                        required="required"
+                                                        id="have-national-id-selection">
+                                                        <option value=" ">Select</option>
+                                                        <t  t-foreach="is_member_in_farmer_cluster"
+                                                            t-as="option">
+                                                            <option t-att-value="option.id"
+                                                            t-att-selected="option.id == is_member_in_farmer_cluster_selection_id">
+                                                                <t t-esc="option.name" />
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="s_website_form_field">
+                                                    <label class="s_website_form_label" for="name">
+                                                        <span class="s_website_form_label_content" style="color: #666666;">
+                                                           What is the primary commodity?
+                                                        </span>
+                                                    </label>
+                                                    <select
+                                                        class="form-select"
+                                                        name="have_national_id"
+                                                        required="required"
+                                                        id="have-national-id-selection">
+                                                        <option value=" ">Select</option>
+                                                        <t  t-foreach="primary_commodities"
+                                                            t-as="option">
+                                                            <option t-att-value="option.id"
+                                                            t-att-selected="option.id == beneficiary.primary_commodity.id">
+                                                                <t t-esc="option.name" />
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="s_website_form_field">
+                                                    <label class="s_website_form_label" for="name">
+                                                        <span class="s_website_form_label_content" style="color: #666666;">
+                                                           What is your role in the cluster?
+                                                        </span>
+                                                    </label>
+                                                    <select
+                                                        class="form-select"
+                                                        name="have_national_id"
+                                                        required="required"
+                                                        id="have-national-id-selection">
+                                                        <option value=" ">Select</option>
+                                                        <t  t-foreach="role_in_cluster"
+                                                            t-as="option">
+                                                            <option t-att-value="option.id"
+                                                            t-att-selected="option.id == role_in_cluster_selection_id">
+                                                                <t t-esc="option.name" />
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button card-header form-card-header"
+                                                style="padding:15px;font-weight:500;"
+                                                id="birth_place_address"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#land_informations"
+                                                aria-expanded="false"
+                                                aria-controls="#geo_location">
+                                                Land Information
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div
+                                        class="s_website_form_rows collapse hide"
+                                        id="land_informations"
+                                        data-bs-parent="#accordion">
+
+                                        <div class="container mt-5">
+                                        <form id="dynamicForm">
+                                          <table class="table" id="dynamicTable">
+                                            <thead>
+                                              <tr>
+                                                <th>Land Ownership Type</th>
+                                                <th>Total Land Area </th>
+                                                <th>Land ID</th>
+                                                <th>Land Certification</th>
+                                                <th>Actions</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                                <t t-foreach="land_info_data" t-as="land_info">
+                                                        <tr t-att-id="land_info['id']">
+                                                        <td>
+                                                            <select id="land_selection"
+                                                                    class="form-select"
+                                                                    name="land_ownership_type"
+                                                                    required="required">
+                                                                <option value=" ">
+                                                                    Select
+                                                                </option>
+                                                                <t t-foreach="ownership_type_selections"
+                                                                    t-as="option">
+                                                                    <option
+                                                                        t-att-value="option.id"
+                                                                        t-att-selected="option.id == land_info['ownership_type_selection_id']">
+                                                                        <t t-esc="option.name" />
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                        </td>
+
+                                                        <td><input type="text" name="land_area" class="form-control" t-att-value="land_info['total_land_area']" /></td>
+                                                        <td><input type="text" name="land_id" class="form-control" t-att-value="land_info['total_land_area']" /></td>
+                                                        <td><input type="text" name="land_certificate" class="form-control" t-att-value="land_info['total_land_area']"/></td>
+                                                        <td><button type="button" class="btn btn-danger remove-row">Remove</button></td>
+                                                    </tr>
+
+                                                </t>
+                                              
+                                            </tbody>
+                                          </table>
+                                          <button type="button" class="btn btn-primary" id="addRow">Add a Line</button>
+                                          <button type="submit" class="btn btn-success">Submit</button>
+                                        </form>
+                                    </div>
+                                    </div>
+
+                                    <!-- <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button card-header form-card-header"
+                                                style="padding:15px;font-weight:500;"
+                                                id="social_status_acc"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#crop_information"
+                                                aria-expanded="false"
+                                                aria-controls="#social_status">
+                                                Crop Information
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div
+                                        class="s_website_form_rows collapse hide"
+                                        id="crop_information"
+                                        data-bs-parent="#accordion">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                Which commodities do you produce?
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select"
+                                                        >
+                                                            <option value=" ">Select</option>
+                                                            <t
+                                                                t-foreach="commodities"
+                                                                t-as="option"
+                                                            >
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                Are there any diseases affecting your crops?
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select"
+                                                        >
+                                                            <option value=" ">Select</option>
+                                                            <t
+                                                                t-foreach="disability_status"
+                                                                t-as="option"
+                                                            >
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                 crop disease?
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select">
+                                                            <option value=" ">Select</option>
+                                                            <t t-foreach="crop_illness_type"
+                                                                t-as="option">
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                 What is your water source?
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select"
+                                                        >
+                                                            <option value=" ">Select</option>
+                                                            <t
+                                                                t-foreach="crop_water_source"
+                                                                t-as="option"
+                                                            >
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button card-header form-card-header"
+                                                style="padding:15px;font-weight:500;"
+                                                id="vonsent_header"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#livestock_information"
+                                                aria-expanded="false"
+                                                aria-controls="#consent_section">
+                                                Livestock Information
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div
+                                        class="s_website_form_rows collapse hide"
+                                        id="livestock_information"
+                                        data-bs-parent="#accordion">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                What kind of animals do you own?
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select">
+                                                            <option value=" ">Select</option>
+                                                            <t
+                                                                t-foreach="livestock_types"
+                                                                t-as="option">
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                 <div  class="s_website_form_field">
+                                                    <label
+                                                        class="s_website_form_label"
+                                                        for="given_name">
+                                                        <span
+                                                            class="s_website_form_label_content"
+                                                            style="color: #666666;">
+                                                            How many animals do you have
+                                                        </span>
+                                                        <span
+                                                            class="s_website_form_mark">
+                                                            *
+                                                        </span>
+                                                    </label>
+
+                                                    <input
+                                                        type="text"
+                                                        id="given_name"
+                                                        name="given_name"
+                                                        class="form-control"
+                                                        required="required"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                               Is there a diseased livestock ?
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select"
+                                                        >
+                                                            <option value=" ">Select</option>
+                                                            <t
+                                                                t-foreach="disability_status"
+                                                                t-as="option"
+                                                            >
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                 What type of Disease?
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select"
+                                                        >
+                                                            <option value=" ">Select</option>
+                                                            <t
+                                                                t-foreach="livestock_illness_types"
+                                                                t-as="option"
+                                                            >
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                 What is your water source?
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select">
+                                                            <option value=" ">Select</option>
+                                                            <t t-foreach="water_source"
+                                                                t-as="option">
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    </div>
+                                    <!-- <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button card-header form-card-header"
+                                                style="padding:15px;font-weight:500;"
+                                                id="social_status_acc"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#agricultural_inputs"
+                                                aria-expanded="false"
+                                                aria-controls="#social_status">
+                                                Agricultural Input
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div
+                                        class="s_website_form_rows collapse hide"
+                                        id="agricultural_inputs"
+                                        data-bs-parent="#accordion">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                 <div  class="s_website_form_field">
+                                                    <label
+                                                        class="s_website_form_label"
+                                                        for="given_name">
+                                                        <span
+                                                            class="s_website_form_label_content"
+                                                            style="color: #666666;">
+                                                            What is the amount of fertiliser you have used?
+                                                        </span>
+                                                        <span
+                                                            class="s_website_form_mark">
+                                                            *
+                                                        </span>
+                                                    </label>
+
+                                                    <input
+                                                        type="text"
+                                                        id="given_name"
+                                                        name="given_name"
+                                                        class="form-control"
+                                                        required="required"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                 <div  class="s_website_form_field">
+                                                    <label
+                                                        class="s_website_form_label"
+                                                        for="given_name">
+                                                        <span
+                                                            class="s_website_form_label_content"
+                                                            style="color: #666666;">
+                                                           What is the amount of pesticide you have used?
+                                                        </span>
+                                                        <span
+                                                            class="s_website_form_mark">
+                                                            *
+                                                        </span>
+                                                    </label>
+
+                                                    <input
+                                                        type="text"
+                                                        id="given_name"
+                                                        name="given_name"
+                                                        class="form-control"
+                                                        required="required"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                 <div  class="s_website_form_field">
+                                                    <label
+                                                        class="s_website_form_label"
+                                                        for="given_name">
+                                                        <span
+                                                            class="s_website_form_label_content"
+                                                            style="color: #666666;">
+                                                           What is the amount of insecticide you have used?
+                                                        </span>
+                                                        <span
+                                                            class="s_website_form_mark">
+                                                            *
+                                                        </span>
+                                                    </label>
+
+                                                    <input
+                                                        type="text"
+                                                        id="given_name"
+                                                        name="given_name"
+                                                        class="form-control"
+                                                        required="required"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                 <div  class="s_website_form_field">
+                                                    <label
+                                                        class="s_website_form_label"
+                                                        for="given_name">
+                                                        <span
+                                                            class="s_website_form_label_content"
+                                                            style="color: #666666;">
+                                                           What is the amount of improved seed you have used?
+                                                        </span>
+                                                        <span
+                                                            class="s_website_form_mark">
+                                                            *
+                                                        </span>
+                                                    </label>
+
+                                                    <input
+                                                        type="text"
+                                                        id="given_name"
+                                                        name="given_name"
+                                                        class="form-control"
+                                                        required="required"/>
+                                                </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button card-header form-card-header"
+                                                style="padding:15px;font-weight:500;"
+                                                id="social_status_acc"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#access_to_resource"
+                                                aria-expanded="false"
+                                                aria-controls="#social_status">
+                                                Access to resources
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div
+                                        class="s_website_form_rows collapse hide"
+                                        id="access_to_resource"
+                                        data-bs-parent="#accordion">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                 Do you use machinery?
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select">
+                                                            <option value=" ">Select</option>
+                                                            <t t-foreach="access_to_machinery"
+                                                                t-as="option">
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                 What kind of machinery do you use?
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select">
+                                                            <option value=" ">Select</option>
+                                                            <t t-foreach="machinary_types"
+                                                                t-as="option">
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button card-header form-card-header"
+                                                style="padding:15px;font-weight:500;"
+                                                id="social_status_acc"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#access_to_finance"
+                                                aria-expanded="false"
+                                                aria-controls="#social_status">
+                                               Financial Services
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div
+                                        class="s_website_form_rows collapse hide"
+                                        id="access_to_finance"
+                                        data-bs-parent="#accordion">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                 Which type of finance access do you have?
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select">
+                                                            <option value=" ">Select</option>
+                                                            <t t-foreach="no_finace_access"
+                                                                t-as="option">
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button card-header form-card-header"
+                                                style="padding:15px;font-weight:500;"
+                                                id="social_status_acc"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#socio_ecoonomic_data"
+                                                aria-expanded="false"
+                                                aria-controls="#social_status">
+                                               Socio Economic Data
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div
+                                        class="s_website_form_rows collapse hide"
+                                        id="socio_ecoonomic_data"
+                                        data-bs-parent="#accordion">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                Marital status
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select">
+                                                            <option value=" ">Select</option>
+                                                            <t t-foreach="martial_status"
+                                                                t-as="option">
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <div>
+                                                    <div class="s_website_form_field">
+                                                        <label class="s_website_form_label">
+                                                            <span
+                                                                class="s_website_form_label_content">
+                                                                Education level
+                                                            </span>
+                                                        </label>
+                                                        <select
+                                                            class="form-select"
+                                                            name="disability_status"
+                                                            required="required"
+                                                            id="are-you-disabled-select">
+                                                            <option value=" ">Select</option>
+                                                            <t t-foreach="education_level"
+                                                                t-as="option">
+                                                                <option t-att-value="option.id">
+                                                                    <t t-esc="option.name" />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                 <div  class="s_website_form_field">
+                                                    <label
+                                                        class="s_website_form_label"
+                                                        for="given_name">
+                                                        <span
+                                                            class="s_website_form_label_content"
+                                                            style="color: #666666;">
+                                                           Household income
+                                                        </span>
+                                                        <span
+                                                            class="s_website_form_mark">
+                                                            *
+                                                        </span>
+                                                    </label>
+
+                                                    <input
+                                                        type="text"
+                                                        id="given_name"
+                                                        name="given_name"
+                                                        class="form-control"
+                                                        required="required"/>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div> -->
+                                                           <!-- Submit Button -->
+                                <div class="card-footer" style="padding: 20px; text-align: right;">
+                                    <button
+                                        type="button"
+                                        class="btn btn-outline-primary"
+                                        onclick="location.href = '/serviceprovider/individual';">
+                                        Cancel
+                                    </button>
+                                    
+                                    <button
+                                        id="beneficiary_submit"
+                                        type="button"
+                                        onclick="validateForm(false);"
+                                        class="btn btn-primary create-new" >
+                                        Submit
+                                    </button>
+                                </div>
+
+                                 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+                                  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+                                <script
+                                    type="text/javascript"
+                                    src="/g2p_ati_service_provider_portal/static/src/js/add_informations.js"
+                                />
+                                <script
+                                    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+                                />
+
+                                <script
+                                    type="text/javascript"
+                                    src="/g2p_ati_service_provider_portal/static/src/js/create_individual_validations.js"
+                                />
+                                <script
+                                    type="text/javascript"
+                                    src="/g2p_ati_service_provider_portal/static/src/js/member_form.js"
+                                />
+<!--                                &lt;!&ndash; Include jQuery &ndash;&gt;-->
+                                <script src="https://code.jquery.com/jquery-3.6.0.min.js" />
+<!--                                &lt;!&ndash; Include Select2 CSS &ndash;&gt;-->
+                                <link
+                                    href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+                                    rel="stylesheet"
+                                />
+<!--                                &lt;!&ndash; Include Select2 JS &ndash;&gt;-->
+                                <script
+                                    src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"
+                                />
+                                <link rel="stylesheet" href="/g2p_ati_service_provider_portal/static/src/css/style.css" />
+                                <script type="text/javascript">
+                                    document.getElementById('addRow').addEventListener('click', function() {
+                                        var newRow = document.createElement('tr');
+                                        newRow.innerHTML = `
+                                            <td>
+                                                <select
+                                                        class="form-select"
+                                                        name="land_ownership_type"
+                                                        required="required">
+                                                    <option value=" ">
+                                                        Select
+                                                    </option>
+                                                    <t t-foreach="ownership_type_selections"
+                                                        t-as="option">
+                                                        <option
+                                                            t-att-value="option.id"
+                                                            >
+                                                            <t t-esc="option.name" />
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </td>
+                                            <td><input type="text" name="land_area" class="form-control"/></td>
+                                            <td><input type="text" name="land_id" class="form-control"/></td>
+                                            <td><input type="text" name="land_certificate" class="form-control"/></td>
+                                            <td><button type="button" class="btn btn-danger remove-row">Remove</button></td>
+                                        `;
+                                        document.querySelector('#dynamicTable tbody').appendChild(newRow);
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </xpath>
+    </template>
+</odoo>

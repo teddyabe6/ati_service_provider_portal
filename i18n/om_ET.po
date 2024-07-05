@@ -1,0 +1,631 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* g2p_ati_service_provider_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-04 12:48+0000\n"
+"PO-Revision-Date: 2024-07-04 12:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "<span class=\"heading-text\">Address</span>"
+msgstr "Teessoo"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                                Given\n"
+"                                                                                Name\n"
+"                                                                            </span>\n"
+"                                                                            <span class=\"s_website_form_mark\">\n"
+"                                                                                *\n"
+"                                                                            </span>"
+msgstr "Maqaa"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                                Grand\n"
+"                                                                                Father's\n"
+"                                                                                Name</span>\n"
+"                                                                            <span class=\"s_website_form_mark\">\n"
+"                                                                                *</span>"
+msgstr "Maqaa Akaakayyuu"
+
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                            Do you have a Phone No?\n"
+"                                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                            Farming Type\n"
+"                                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                            Kebele\n"
+"                                                                        </span>\n"
+"                                                                        <span class=\"s_website_form_mark\">\n"
+"                                                                            *\n"
+"                                                                        </span>"
+msgstr "Kebele"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                            Please Provide You Contact Number\n"
+"                                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                            Primary Phone Number\n"
+"                                                                        </span>\n"
+"                                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr "Lakkoofsa Bilbilaa Sadarkaa Duraa"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                            email\n"
+"                                                                        </span>\n"
+"                                                                        <span class=\"s_website_form_mark\">\n"
+"                                                                            *\n"
+"                                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                           Secondary Phone Number\n"
+"                                                                        </span>\n"
+"                                                                        <span class=\"s_website_form_mark\">\n"
+"                                                                            *\n"
+"                                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    Are you a member of cooperative union?\n"
+"                                                                </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    Are you registered in a farmer cluster?\n"
+"                                                                </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    Given\n"
+"                                                                    Name\n"
+"                                                                </span>\n"
+"                                                                <span class=\"s_website_form_mark\">\n"
+"                                                                    *\n"
+"                                                                </span>"
+msgstr "Maqaa"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    Grand\n"
+"                                                                    Father's\n"
+"                                                                    Name</span>\n"
+"                                                                <span class=\"s_website_form_mark\">\n"
+"                                                                    *</span>"
+msgstr "Maqaa Akaakayyuu"
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    Is the Farmer  a member of primary cooperative ?\n"
+"                                                                </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                    What is the name of the cooperative ?\n"
+"                                                                </span>"
+msgstr ""
+
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                   What is the name of the cooperative union?\n"
+"                                                                </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                   What is the primary commodity?\n"
+"                                                                </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                   What is your role in the cluster?\n"
+"                                                                </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                Do you have a Phone No?\n"
+"                                                            </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                Email\n"
+"                                                            </span>\n"
+"                                                            <span class=\"s_website_form_mark\">\n"
+"                                                                *\n"
+"                                                            </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                                Farming Type\n"
+"                                                            </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                            Are you a member of cooperative union?\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                            Are you registered in a farmer cluster?\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                            Is the Farmer  a member of primary cooperative ?\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                            What is the name of the cooperative ?\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                           What is the name of the cooperative union?\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                           What is the primary commodity?\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">\n"
+"                                                           What is your role in the cluster?\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">Date of\n"
+"                                                                            Birth\n"
+"                                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">Date of\n"
+"                                                                Birth\n"
+"                                                            </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">Do you have a\n"
+"                                                            national ID?\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">Father's\n"
+"                                                                                Name</span>\n"
+"                                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">Father's\n"
+"                                                                    Name</span>\n"
+"                                                                <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">Kebele\n"
+"                                                            </span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">RID\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">UID\n"
+"                                                        </span>\n"
+"                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\" style=\"color: #666666;\">id holder\n"
+"                                                                </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                                Primary Language</span>\n"
+"                                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                            Gender</span>\n"
+"                                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                            Region</span>\n"
+"                                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                            Woreda</span>\n"
+"                                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                            Zone</span>\n"
+"                                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                     What is your water source?\n"
+"                                                                </span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                    Primary Language</span>\n"
+"                                                                <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                Gender</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                Region</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                Woreda</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                                Zone</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Actions"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Add a Line"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Basic Information"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Cancel"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Commodity Name"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Create New Farmer"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Crop Information"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Dashboard"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Date of Birth"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Disease"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Family Members"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Farmer"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "First Name"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Gender"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "ID Section"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Individual Details"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Land Certification"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Land ID"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Land Information"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Land Ownership Type"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Last Name"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Membership Details"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Phone Number Must Be 10 Digits"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Primary Phone"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "RID"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Remove"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Secondary phone number"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Submit"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Total Land Area"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "Type"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid "UID"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+msgid ""
+"UID must be\n"
+"                                                    exactly 12 characters long."
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "Update Farmer"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "YYYY-MM-DD"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "id holder"
+msgstr ""
+
+#. module: g2p_ati_service_provider_portal
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_form_template
+#: model_terms:ir.ui.view,arch_db:g2p_ati_service_provider_portal.ati_individual_registrant_update_form_template
+msgid "kebele"
+msgstr ""
