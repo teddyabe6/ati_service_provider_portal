@@ -1,3 +1,70 @@
+ .rounded-card {
+            width: 1200px;
+            height: 700px;
+            margin: 50px auto; /* Adjusted margin to center the card horizontally */
+            border: 1px solid #ddd;
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            display: flex; /* Use flexbox to layout the sidebar and main content */
+            overflow: hidden; /* Ensure content doesn't overflow and hide the corners */
+        }
+.sidebar {
+    width: 220px; /* Fixed width for the sidebar */
+    height: 100%; /* Full height of the rounded card */
+    background-color: #DBE3E9;
+    border-right: 1px solid #ddd;
+}
+.sidebar ul {
+    background-color: #DBE3E9; /* Ensure the background color is consistent */
+    padding-left: 0; /* Remove default padding */
+    padding-top: 20px; /* Add padding to push the first item down */
+}
+.sidebar .nav-link {
+    color: #6c757d;
+    padding: 15px 20px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid #e2e3e5;
+    margin-bottom: 1px;
+    background-color: #DBE3E9;
+    border-radius: 4px; /* Slight rounding for better visibility */
+    box-shadow: 0 2px 2px rgb(255, 255, 255); /* Shadow to create separation */
+}
+.sidebar .nav-link:last-child {
+    border-bottom: none;
+}
+.sidebar .nav-link.active {
+    color: #fff;
+    background-color: #06916B;
+}
+.sidebar .nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #06916B;
+}
+.content {
+    padding: 20px;
+    flex-grow: 1; /* Take up remaining space in the card */
+    overflow-y: auto; /* Add scroll if content overflows */
+}
+.sidebar .nav-item:first-child {
+    padding-top: 20px; /* Add padding to push the first item down */
+}
+
+
+.form-template .breadcrumb-item a {
+  color: #06916B;
+  font: normal normal 600 14px/17px Inter;
+}
+
+
 .heading-header {
     background-color: #f3e6f6;
     margin-top: 1.5%;
