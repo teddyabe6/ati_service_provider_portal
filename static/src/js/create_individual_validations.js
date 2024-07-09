@@ -351,11 +351,11 @@ $(document).ready(function () {
 
     const uidInput = document.getElementById("uid_input");
     const uidError = document.getElementById("uid_error");
-    const form = document.getElementById("updategroupForm");
-    const emailInput = document.getElementById("email");
-    const emailError = document.createElement("div");
-    emailError.classList.add("invalid-feedback");
-    emailInput.parentNode.appendChild(emailError);
+//    const form = document.getElementById("updategroupForm");
+//    const emailInput = document.getElementById("email");
+//    const emailError = document.createElement("div");
+//    emailError.classList.add("invalid-feedback");
+//    emailInput.parentNode.appendChild(emailError);
 
     uidInput.addEventListener("input", function () {
         console.log("hey hey")
@@ -367,26 +367,26 @@ $(document).ready(function () {
             uidError.style.display = "none";
         }
     });
-    function isValidEmail(email) {
-        // Basic email regex pattern
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailPattern.test(email);
-    }
-
-    emailInput.addEventListener("input", function () {
-        if (emailInput.value.length !== 0) {
-            if (!isValidEmail(emailInput.value)) {
-                emailInput.classList.add("is-invalid");
-                emailError.style.display = "block";
-            } else {
-                emailInput.classList.remove("is-invalid");
-                emailError.style.display = "none";
-            }
-        } else {
-            emailInput.classList.remove("is-invalid");
-            emailError.style.display = "none";
-        }
-    });
+//    function isValidEmail(email) {
+//        // Basic email regex pattern
+//        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//        return emailPattern.test(email);
+//    }
+//
+//    emailInput.addEventListener("input", function () {
+//        if (emailInput.value.length !== 0) {
+//            if (!isValidEmail(emailInput.value)) {
+//                emailInput.classList.add("is-invalid");
+//                emailError.style.display = "block";
+//            } else {
+//                emailInput.classList.remove("is-invalid");
+//                emailError.style.display = "none";
+//            }
+//        } else {
+//            emailInput.classList.remove("is-invalid");
+//            emailError.style.display = "none";
+//        }
+//    });
 
     window.customvalidateForm = function (isCreateForm) {
         if (uidInput.value.length !== 12 && uidInput.value.length !== 0) {

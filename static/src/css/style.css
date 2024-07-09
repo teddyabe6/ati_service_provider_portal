@@ -1,63 +1,67 @@
- .rounded-card {
-            width: 1200px;
-            height: 700px;
-            margin: 50px auto; /* Adjusted margin to center the card horizontally */
-            border: 1px solid #ddd;
-            border-radius: 15px; /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            display: flex; /* Use flexbox to layout the sidebar and main content */
-            overflow: hidden; /* Ensure content doesn't overflow and hide the corners */
-        }
+.rounded-card {
+    width: 100%; /* Full width inside accordion */
+    height: 900px;
+    margin: 20px auto; /* Adjusted margin for better fit */
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    overflow: hidden;
+}
+.accordion .card-header {
+    background-color: #DBE3E9;
+    color: #6c757d;
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.accordion .card-header:hover {
+    background-color: #A9B4BF;
+    color: #333;
+}
+.accordion .card-header.hidden {
+    display: none; /* Hide the header initially */
+}
 .sidebar {
-    width: 220px; /* Fixed width for the sidebar */
-    height: 100%; /* Full height of the rounded card */
+    width: 220px;
+    height: 100%;
     background-color: #DBE3E9;
     border-right: 1px solid #ddd;
 }
 .sidebar ul {
-    background-color: #DBE3E9; /* Ensure the background color is consistent */
-    padding-left: 0; /* Remove default padding */
-    padding-top: 20px; /* Add padding to push the first item down */
+    padding-left: 0;
+    padding-top: 20px;
+    list-style-type: none;
 }
 .sidebar .nav-link {
     color: #6c757d;
     padding: 15px 20px;
     font-weight: bold;
-    position: relative;
     cursor: pointer;
-    border-bottom: 1px solid #e2e3e5;
     margin-bottom: 1px;
     background-color: #DBE3E9;
-    border-radius: 4px; /* Slight rounding for better visibility */
-    box-shadow: 0 2px 2px rgb(255, 255, 255); /* Shadow to create separation */
+    border-radius: 4px;
 }
-.sidebar .nav-link:last-child {
-    border-bottom: none;
+.sidebar .nav-link:hover {
+    background-color: #A9B4BF;
+    color: #333;
 }
 .sidebar .nav-link.active {
     color: #fff;
-    background-color: #06916B;
-}
-.sidebar .nav-link.active::after {
-    content: '';
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid #06916B;
+    background-color: #783E83;
 }
 .content {
     padding: 20px;
     flex-grow: 1; /* Take up remaining space in the card */
     overflow-y: auto; /* Add scroll if content overflows */
+    height: 100%; /* Full height of the rounded card */
 }
 .sidebar .nav-item:first-child {
-    padding-top: 20px; /* Add padding to push the first item down */
+    padding-top: 20px;
 }
-
 
 .form-template .breadcrumb-item a {
   color: #06916B;
@@ -66,7 +70,7 @@
 
 
 .heading-header {
-    background-color: #f3e6f6;
+    background-color: #e6f7e8;
     margin-top: 1.5%;
     margin-bottom: 1%;
     margin-left: 3.5%;
@@ -82,23 +86,7 @@
 .numbering {
     color: #783e83;
 }
-.heading-header {
-    background-color: #f3e6f6;
-    margin-top: 1.5%;
-    margin-bottom: 1%;
-    margin-left: 3.5%;
-    margin-right: 8%;
-    padding: 8px;
-}
 
-.heading-text {
-    color: #783e83;
-    margin-left: 1.5%;
-}
-
-.numbering {
-    color: #783e83;
-}
 .additional_filter_container {
     display: flex;
     flex-wrap: nowrap; /* Ensure items stay in one row */
@@ -124,3 +112,98 @@
     color: red;
     display: none;
 }
+
+.card {
+  width: 1200px;
+  box-shadow: 0px 2px 5px #0000001a;
+  border-radius: 10px;
+  opacity: 1;
+
+
+      body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .form-container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #5D5C61;
+        }
+        .section {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #fafafa;
+        }
+        .section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .section input, .section select {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .buttons {
+            text-align: right;
+        }
+        .buttons button {
+            background-color: #28a745;
+            border: none;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .buttons button.delete {
+            background-color: #dc3545;
+        }
+        .buttons button:hover {
+            background-color: #218838;
+        }
+        .buttons button.delete:hover {
+            background-color: #c82333;
+        }
+        .delete-icon {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .delete-icon:hover {
+            transform: scale(1.1);
+        }
+        .add-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .add-button-container button {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .add-button-container button:hover {
+            background-color: #0056b3;
+        }
