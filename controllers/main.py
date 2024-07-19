@@ -213,8 +213,8 @@ class AtiserviceProviderBeneficiaryManagement(G2PServiceProviderBeneficiaryManag
 
             farmer = request.env["res.partner"].sudo().create(
                 {
-                    "given_name": "test Name",
-                    # "given_name": kw.get("given_name"),
+                    # "given_name": "test Name",
+                    "given_name": kw.get("given_name"),
                     "addl_name": kw.get("addl_name"),
                     "family_name": kw.get("family_name"),
                     "first_name_amh": kw.get("given_name_am"),
@@ -223,21 +223,25 @@ class AtiserviceProviderBeneficiaryManagement(G2PServiceProviderBeneficiaryManag
                     "name": name,
                     "region": kw.get("region"),
                     "birthdate": birthdate,
-                    "gender": kw.get("gender"),
+                    # "gender": kw.get("gender"),
                     "email": kw.get("email"),
                     "is_registrant": True,
                     "is_group": False,
                 }
             )
             form = request.httprequest.form
-            name = request.httprequest.form.getlist
+            name_list = request.httprequest.form.getlist
             date_of_birth = request.httprequest.form.getlist('date_of_birth')
             commodities = request.httprequest.form.getlist('commodities')
             is_diseased = request.httprequest.form.getlist('is_diseased')
             crop_illness_type = request.httprequest.form.getlist('crop_illness_type')
+            given_name = request.httprequest.form.getlist('given-name')
+            father_name = request.httprequest.form.getlist('father-name')
+            grand_father_name = request.httprequest.form.getlist('grand-father-name')
             # crop_illness_type_int = [int(vid) for vid in crop_illness_type]
             # farmer.crop_information_ids.illness_type = [crop_illness_type]
-            print(name)
+            print(name_list)
+            print(father_name)
             # print(farmer.crop_information_ids.illness_type)
 
             for commodities, is_diseased, crop_illness_type in zip(commodities,is_diseased, crop_illness_type) :
@@ -247,6 +251,18 @@ class AtiserviceProviderBeneficiaryManagement(G2PServiceProviderBeneficiaryManag
                     'crop': commodities ,
                     'is_diseased': is_diseased,
                     'illness_type': [(6, 0, [int(id) for id in crop_illness_type ])],
+                })
+
+            for  father_name, grand_father_name in zip( father_name, grand_father_name) :
+                print("multi *****  Records")
+                print( father_name, grand_father_name)
+                members = request.env['res.partner'].sudo().create({
+                    # 'given_name': given_name,
+                    'family_name': father_name,
+                    "name": name,
+                    'gf_name_eng': grand_father_name,
+                    "is_registrant": True,
+                    "is_group": False,
                 })
 
 

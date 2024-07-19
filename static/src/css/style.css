@@ -1,3 +1,874 @@
+
+                .rounded-card, .accordion .card {
+            width: 1200px;
+            margin: 50px auto;
+            border-radius: 15px;
+        }
+
+        .rounded-card {
+            width: 1200px;
+            height: 900px;
+            margin: 50px auto;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+            background-color: #fff;
+            display: flex;
+            overflow: hidden;
+        }
+        .sidebar {
+            width: 220px;
+            height: 100%;
+            background-color: #DBE3E9;
+            border-right: 1px solid #ddd;
+        }
+        .sidebar ul {
+            background-color: #DBE3E9;
+            padding-left: 0;
+            padding-top: 20px;
+        }
+        .sidebar .nav-link {
+            color: #6c757d;
+            padding: 15px 20px;
+            font-weight: bold;
+            position: relative;
+            cursor: pointer;
+            border-bottom: 1px solid #e2e3e5;
+            margin-bottom: 1px;
+            background-color: #DBE3E9;
+            border-radius: 4px;
+            box-shadow: 0 2px 2px rgb(255, 255, 255);
+        }
+        .sidebar .nav-link:last-child {
+            border-bottom: none;
+        }
+        .sidebar .nav-link.active {
+              color: #fff;
+              background-color: #139049;
+            }
+        .sidebar .nav-link.active::after {
+            content: '';
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #139049;
+        }
+        .content {
+            padding: 20px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        .sidebar .nav-item:first-child {
+            padding-top: 20px;
+        }
+
+        .container {
+            width: 900px;
+            height: 100px;
+            position: relative;
+        }
+
+        .background-card {
+            width: 100%;
+            height: 100%;
+            background: #F8F8F8;
+            border-radius: 5px;
+            border: 1px #D9D9D9 dotted;
+            position: absolute;
+        }
+
+        .options {
+            width: 129px;
+            height: 26px;
+            position: absolute;
+            top: 51px;
+            left: 31px;
+        }
+
+        .option {
+            width: 49px;
+            height: 26px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+        }
+
+        .option.no {
+            left: 80px;
+        }
+
+        .option-box {
+            width: 26px;
+            height: 26px;
+            background: white;
+            border-radius: 5px;
+            border: 1px rgba(0, 0, 0, 0.10) solid;
+            position: relative;
+        }
+
+        .option-box input[type="radio"] {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .option-label {
+            margin-left: 5px;
+            color: rgba(0, 0, 0, 0.50);
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .question {
+            position: absolute;
+            top: 28px;
+            left: 31px;
+            color: black;
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+        }
+
+        .required {
+            color: #E61616;
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+        }
+
+        .button-container {
+            width: 890px;
+            height: 60px;
+            position: absolute;
+            top: 50%;
+        }
+
+        .separator {
+            width: 100%;
+            height: 1px;
+            background: #D9D9D9;
+            position: absolute;
+            top: auto;
+        }
+
+        .button {
+            width: 100px;
+            height: 40px;
+            position: absolute;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-family: Roboto, sans-serif;
+            font-weight: 600;
+            word-wrap: break-word;
+            cursor: pointer;
+        }
+
+        .button.cancel {
+            left: 670px;
+            top: 20px;
+            background: white;
+            border: 1px rgba(0, 0, 0, 0.30) solid;
+            color: rgba(0, 0, 0, 0.25);
+        }
+
+        .button.save {
+            left: 790px;
+            top: 20px;
+            background: #139049;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+            color: white;
+        }
+
+        .accordion .card-body {
+            padding: 0;
+        }
+        .accordion .card {
+            border: none;
+            background: none;
+        }
+        .accordion .card-header {
+            padding: 1px;
+            background: none;
+        }
+        .farmer-card {
+            width: 1200px;
+            height: 60px;
+            position: relative;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .farmer-card-bg {
+            width: 1200px;
+            height: 60px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            background: white;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.10);
+            border-radius: 20px;
+        }
+        .farmer-card-topbar {
+            width: 200px;
+            height: 60px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            background: #DBE3E9;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .farmer-label {
+            left: 19px;
+            top: 23px;
+            position: absolute;
+            color: #139049;
+            font-size: 16px;
+            font-family: Roboto;
+            font-weight: 500;
+            word-wrap: break-word;
+        }
+        .farmer-name {
+            left: 249px;
+            top: 23px;
+            position: absolute;
+            color: black;
+            font-size: 16px;
+            font-family: Roboto;
+            font-weight: 500;
+            word-wrap: break-word;
+        }
+        .profile-image {
+            width: 26px;
+            height: 26px;
+            left: 1154px;
+            top: 20px;
+            position: absolute;
+        }
+        .uid {
+            left: 376px;
+            top: 23px;
+            position: absolute;
+            color: #2196F3;
+            font-size: 16px;
+            font-family: Roboto;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        .content {
+            padding: 20px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        .container {
+            width: 900px;
+            height: 100px;
+            position: absolute;
+        }
+        .background-card {
+            width: 80%;
+            height: 40%;
+            background: #F8F8F8;
+            border-radius: 5px;
+            border: 1px #D9D9D9 dotted;
+            position: absolute;
+        }
+        .options {
+            width: 129px;
+            height: 26px;
+            position: absolute;
+            top: 51px;
+            left: 31px;
+        }
+        .option {
+            width: 49px;
+            height: 26px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+        }
+        .option.no {
+            left: 80px;
+        }
+        .option-box {
+            width: 26px;
+            height: 26px;
+            background: white;
+            border-radius: 5px;
+            border: 1px rgba(0, 0, 0, 0.10) solid;
+            position: relative;
+        }
+        .option-box input[type="radio"] {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .option-label {
+            margin-left: 5px;
+            color: rgba(0, 0, 0, 0.50);
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .question {
+            position: absolute;
+            top: 28px;
+            left: 31px;
+            color: black;
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+        }
+        .required {
+            color: #E61616;
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+        }
+
+        .separator {
+            width: 100%;
+            height: 1px;
+            background: #D9D9D9;
+            position: absolute;
+            top: auto;
+        }
+        .button {
+            width: 100px;
+            height: 40px;
+            position: absolute;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-family: Roboto, sans-serif;
+            font-weight: 600;
+            word-wrap: break-word;
+            cursor: pointer;
+        }
+        .button.cancel {
+            left: 670px;
+            top: 20px;
+            background: white;
+            border: 1px rgba(0, 0, 0, 0.30) solid;
+            color: rgba(0, 0, 0, 0.25);
+        }
+        .button.save {
+            left: 790px;
+            top: 20px;
+            background: #139049;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+            color: white;
+        }
+
+        body {
+    font-family: Roboto, sans-serif;
+}
+
+.form-container {
+    width: 890px;
+    height: 63px;
+    position: relative;
+}
+
+.field-container {
+    width: 400px;
+    height: 63px;
+    position: absolute;
+}
+
+.field-container:first-child {
+    left: 0;
+}
+
+.field-container:last-child {
+    left: 490px;
+}
+
+.label-container {
+    position: absolute;
+    top: 0;
+}
+
+.label-text {
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.required {
+    color: #E61616;
+    font-size: 14px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.input-container {
+    width: 400px;
+    height: 40px;
+    position: absolute;
+    top: 23px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    display: flex;
+    align-items: center;
+}
+
+.with-shadow {
+    box-shadow: 0px 2px 8px rgba(19, 144, 73, 0.10);
+    border: 1px solid rgba(19, 144, 73, 0.50);
+}
+
+.input-icon {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: 15px;
+}
+
+.input-placeholder {
+    color: rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 15px;
+}
+
+.field-container:first-child .input-placeholder {
+    color: black;
+    font-weight: 500;
+}
+.container {
+            width: 890px;
+            position: relative;
+        }
+        .separator {
+            width: 100%;
+            height: 1px;
+            background: #D9D9D9;
+            position: absolute;
+            top: 0;
+        }
+        .button {
+            width: 100px;
+            height: 40px;
+            background: white;
+            border-radius: 5px;
+            border: 1px rgba(0, 0, 0, 0.30) solid;
+            position: absolute;
+            right: 0;
+            top: 20px;
+        }
+        .button-text {
+            left: 20px;
+            top: 11px;
+            position: absolute;
+            color: rgba(0, 0, 0, 0.50);
+            font-size: 16px;
+            font-family: Roboto, sans-serif;
+            font-weight: 600;
+        }
+        .button img {
+            width: 22px;
+            height: 22px;
+            right: 15px;
+            top: 9px;
+            position: absolute;
+        }
+        .field-container {
+            width: 270px;
+            height: 63px;
+            position: absolute;
+        }
+        .field-container .label {
+            color: black;
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+        }
+        .field-container .required {
+            color: #E61616;
+        }
+        .field-container .input-box {
+            width: 100%;
+            height: 40px;
+            background: white;
+            border-radius: 5px;
+            border: 1px rgba(0, 0, 0, 0.10) solid;
+            position: absolute;
+            top: 23px;
+        }
+        .field-container .input-placeholder {
+            left: 15px;
+            top: 36px;
+            position: absolute;
+            color: rgba(0, 0, 0, 0.25);
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+        }
+        .field-container img {
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            top: 34px;
+            right: 15px;
+        }
+        .header {
+            width: 100%;
+            height: 35px;
+            background: rgba(19, 144, 73, 0.10);
+            position: absolute;
+            top: 0;
+        }
+        .header-text {
+            left: 10px;
+            top: 10px;
+            position: absolute;
+            color: #139049;
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 500;
+        }
+        .gender-field {
+            width: 158px;
+            height: 58px;
+            position: absolute;
+        }
+        .gender-field .options {
+            width: 100%;
+            height: 28px;
+            position: absolute;
+            top: 30px;
+        }
+        .gender-option {
+            width: 78px;
+            height: 28px;
+            position: absolute;
+        }
+        .gender-option .radio {
+            width: 28px;
+            height: 28px;
+            background: white;
+            border-radius: 16px;
+            border: 1px rgba(0, 0, 0, 0.10) solid;
+            position: absolute;
+            top: 0;
+        }
+        .gender-option .selected {
+            box-shadow: 0px 2px 8px rgba(19, 144, 73, 0.50);
+            border: 1px rgba(19, 144, 73, 0.50) solid;
+        }
+        .gender-option .selected .inner {
+            width: 16px;
+            height: 16px;
+            background: #139049;
+            border-radius: 9999px;
+            position: absolute;
+            left: 6px;
+            top: 6px;
+        }
+        .gender-option .label {
+            left: 32px;
+            top: 7px;
+            position: absolute;
+            color: rgba(0, 0, 0, 0.50);
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+        }
+        .gender-option .selected .label {
+            color: black;
+        }
+        .container {
+            width: 890px;
+            position: relative;
+        }
+        .separator {
+            width: 100%;
+            height: 1px;
+            background: #D9D9D9;
+            position: absolute;
+            top: 0;
+        }
+        .button {
+            width: 100px;
+            height: 40px;
+            background: white;
+            border-radius: 5px;
+            border: 1px rgba(0, 0, 0, 0.30) solid;
+            position: absolute;
+            right: 0;
+            top: 20px;
+        }
+        .button-text {
+            left: 20px;
+            top: 11px;
+            position: absolute;
+            color: rgba(0, 0, 0, 0.50);
+            font-size: 16px;
+            font-family: Roboto, sans-serif;
+            font-weight: 600;
+        }
+        .button img {
+            width: 22px;
+            height: 22px;
+            right: 15px;
+            top: 9px;
+            position: absolute;
+        }
+        .add-line-button {
+            width: 100px;
+            height: 40px;
+            background: rgba(19, 144, 73, 0.10);
+            border-radius: 5px;
+            position: relative;
+            right: 0;
+            bottom: 0;
+        }
+        .add-line-text {
+            left: 17px;
+            top: 13px;
+            position: absolute;
+            color: #139049;
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+        }
+        .field-container {
+            width: 250px;
+            height: 63px;
+            position: absolute;
+        }
+        .field-container .label {
+            color: black;
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+        }
+        .field-container .required {
+            color: #E61616;
+        }
+        .field-container .input-box {
+            width: 100%;
+            height: 40px;
+            background: white;
+            border-radius: 5px;
+            border: 1px rgba(0, 0, 0, 0.10) solid;
+            position: absolute;
+            top: 23px;
+        }
+        .field-container .input-placeholder {
+            left: 15px;
+            top: 36px;
+            position: absolute;
+            color: rgba(0, 0, 0, 0.25);
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+        }
+        .field-container img {
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            top: 34px;
+            right: 15px;
+        }
+        .header {
+            width: 100%;
+            height: 35px;
+            background: rgba(19, 144, 73, 0.10);
+            position: absolute;
+            top: 0;
+        }
+        .header-text {
+            left: 10px;
+            top: 10px;
+            position: absolute;
+            color: #139049;
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 500;
+        }
+        .gender-field {
+            width: 158px;
+            height: 58px;
+            position: absolute;
+        }
+        .gender-field .options {
+            width: 100%;
+            height: 28px;
+            position: absolute;
+            top: 30px;
+        }
+        .gender-option {
+            width: 78px;
+            height: 28px;
+            position: absolute;
+        }
+        .gender-option .radio {
+            width: 28px;
+            height: 28px;
+            background: white;
+            border-radius: 16px;
+            border: 1px rgba(0, 0, 0, 0.10) solid;
+            position: absolute;
+            top: 0;
+        }
+        .gender-option .selected {
+            box-shadow: 0px 2px 8px rgba(19, 144, 73, 0.50);
+            border: 1px rgba(19, 144, 73, 0.50) solid;
+        }
+        .gender-option .selected .inner {
+            width: 16px;
+            height: 16px;
+            background: #139049;
+            border-radius: 9999px;
+            position: absolute;
+            left: 6px;
+            top: 6px;
+        }
+        .gender-option .label {
+            left: 32px;
+            top: 7px;
+            position: absolute;
+            color: rgba(0, 0, 0, 0.50);
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            font-weight: 400;
+        }
+        .gender-option .selected .label {
+            color: black;
+        }
+        .dashed-line {
+            position: absolute;
+            color: rgba(0, 0, 0, 0.30);
+            font-size: 12px;
+            font-family: Roboto, sans-serif;
+            font-weight: 300;
+        }
+        .container {
+  width: 891px;
+  height: 365px;
+  position: relative;
+}
+
+.primary-cooperative,
+.primary-union,
+.farmer-cluster {
+  width: 309px;
+  height: 57px;
+  position: absolute;
+  left: 0;
+}
+
+.primary-cooperative { top: 2px; }
+.primary-union { top: 102px; }
+.farmer-cluster { top: 197px; }
+
+.label {
+  color: black;
+  font-size: 14px;
+  font-family: Roboto;
+  font-weight: 400;
+  word-wrap: break-word;
+  position: absolute;
+  left: 0;
+}
+
+.required {
+  color: #E61616;
+}
+
+
+.option .radio {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  background: white;
+  border-radius: 16px;
+  border: 1px rgba(0, 0, 0, 0.10) solid;
+}
+
+.option .radio.selected {
+  box-shadow: 0px 2px 8px rgba(19, 144, 73, 0.50);
+  border: 1px rgba(19, 144, 73, 0.50) solid;
+}
+
+.option .radio .inner-circle {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  background: #139049;
+  border-radius: 9999px;
+}
+
+.option-label {
+  position: absolute;
+  left: 32px;
+  top: 7px;
+  color: rgba(0, 0, 0, 0.50);
+  font-size: 14px;
+  font-family: Roboto;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.option-label.selected-label {
+  color: black;
+}
+
+.input-field {
+  width: 400px;
+  position: absolute;
+}
+
+.input-box {
+  width: 400px;
+  height: 40px;
+  background: white;
+  border-radius: 5px;
+  border: 1px rgba(0, 0, 0, 0.10) solid;
+  position: absolute;
+  top: 25px;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 368px;
+  top: 36px;
+}
+
+/*----------------------older section--------------------*/
+
 .rounded-card {
     width: 100%; /* Full width inside accordion */
     height: 900px;
@@ -9,28 +880,12 @@
     display: flex;
     overflow: hidden;
 }
-.accordion .card-header {
-    background-color: #DBE3E9;
-    color: #6c757d;
-    border-bottom: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 15px 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.accordion .card-header:hover {
-    background-color: #A9B4BF;
-    color: #333;
-}
+
+
 .accordion .card-header.hidden {
     display: none; /* Hide the header initially */
 }
-.sidebar {
-    width: 220px;
-    height: 100%;
-    background-color: #DBE3E9;
-    border-right: 1px solid #ddd;
-}
+
 .sidebar ul {
     padding-left: 0;
     padding-top: 20px;
@@ -49,10 +904,7 @@
     background-color: #A9B4BF;
     color: #333;
 }
-.sidebar .nav-link.active {
-    color: #fff;
-    background-color: #783E83;
-}
+
 .content {
     padding: 20px;
     flex-grow: 1; /* Take up remaining space in the card */
@@ -207,3 +1059,66 @@
         .add-button-container button:hover {
             background-color: #0056b3;
         }
+
+                .add-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .add-button-container button {
+            background-color: #06916B;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .add-button-container button:hover {
+            background-color: #06916B;
+        }
+
+        .addLine{
+            color:#06916B ;
+            background-color: #DBE3E9;
+            border:none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+
+        .land_container2 {
+
+            padding-left: 8px;
+            padding-right: 8px;
+
+
+        }
+            .form-label2 {
+            font-size: 15px;
+        }
+
+        .list_section {
+            border-top: 1px dashed;
+          }
+
+          .inputfile {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+
+        .btn-custom {
+    /* border: 1px solid #bdc0be; Border color */
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: #333;
+    width: 100%;
+    border: 1px solid;
+  }
+
+
+

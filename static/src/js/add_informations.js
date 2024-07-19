@@ -1,30 +1,6 @@
-//document.addEventListener('DOMContentLoaded', function() {
-//    var tableBody = document.querySelector('#dynamicTable tbody');
-//    var addRowBtn = document.getElementById('addRow');
-//    var templateRow = document.getElementById('template_row');
-//
-//    addRowBtn.addEventListener('click', function() {
-//           if (templateRow) {
-//                // Clone the hidden template row
-//                var newRow = templateRow.cloneNode(true);
-//                newRow.style.display = ""; // Make the row visible
-//                newRow.id = ""; // Clear the ID to avoid duplicates
-//                tableBody.appendChild(newRow);
-//            } else {
-//                console.error("Template row not found!");
-//            }
-//        });
-//        tableBody.addEventListener('click', function(event) {
-//            if (event.target && event.target.matches("button.remove-row")) {
-//                var row = event.target.closest('tr');
-//                row.remove();
-//            }
-//    });
-//
-//});
-
-
 function addSection() {
+
+    console.log("adddd")
         const container = document.getElementById('sections-container');
         const newSection = document.createElement('div');
         newSection.className = 'section';
@@ -80,3 +56,12 @@ function addSection() {
         const section = icon.closest('.section');
         section.remove();
     }
+
+
+
+
+
+
+
+
+

@@ -171,8 +171,38 @@ $(document).ready(function () {
         }
     }
 
+
+     function handlePhoneNumberSelection() {
+        const selectElement = document.getElementById("have-phone-number-selection");
+        const phoneDiv = document.getElementById("phone-div");
+        const contactDiv = document.getElementById("contact-div");
+        const phoneInput = document.getElementById("primary_phone");
+        const contactInput = document.getElementById("contact_phone");
+        const selectedOptionText = selectElement.options[selectElement.selectedIndex].text
+            .trim()
+            .toLowerCase();
+
+        if (selectedOptionText === "yes") {
+            phoneDiv.style.display = "block";
+            phoneInput.setAttribute("required", "required");
+            contactDiv.style.display = "none";
+            contactInput.removeAttribute("required");
+        } else if (selectedOptionText === "no") {
+            phoneDiv.style.display = "none";
+            phoneInput.removeAttribute("required");
+            contactDiv.style.display = "block";
+            contactInput.setAttribute("required", "required");
+        } else {
+            phoneDiv.style.display = "none";
+            phoneInput.removeAttribute("required");
+            contactDiv.style.display = "none";
+            contactInput.removeAttribute("required");
+        }
+    }
+
     // Event listener for national ID selection change
     $("#have-national-id-selection").on("change", handleNationalIdSelection);
+    $("#have-phone-number-selection").on("change", handlePhoneNumberSelection);
 
     $("#region_selection").on("change", function () {
         const regionId = this.value;
@@ -326,6 +356,7 @@ $(document).ready(function () {
 
     // Trigger the change event on page load to handle the initial state
     $("#have-national-id-selection").trigger("change");
+    $("have-phone-number-selection").trigger("change");
     $("#religion-select").trigger("change");
     $("#marital_status-select").trigger("change");
     $("#marital_status-select").trigger("change");
@@ -358,7 +389,6 @@ $(document).ready(function () {
 //    emailInput.parentNode.appendChild(emailError);
 
     uidInput.addEventListener("input", function () {
-        console.log("hey hey")
         if (uidInput.value.length !== 12 && uidInput.value.length !== 0) {
             uidInput.classList.add("uid_error");
             uidError.style.display = "block";
@@ -419,3 +449,83 @@ $(document).ready(function () {
         }
     };
 });
+
+
+function addSection() {
+
+    console.log("adddd")
+        const container = document.getElementById('sections-container');
+        const newSection = document.createElement('div');
+        newSection.className = 'section';
+
+        newSection.innerHTML = `
+             <div class="container" style="height: 249px;">
+                <div id="sections-container">
+
+                <div class="container" style="height: 196px;">
+                    <div class="dashed-line" style="top: 182px;">---------------------------------------------------------------------------------------------------------------------------------------------------------</div>
+                    <div class="field-container" style="left: 1px; top: 26px;">
+                             <label class="label" for="given-name">Given Name:</label>
+                            <input class="input-box" type="text" name="given-name" placeholder="Enter given name" required="True"/>
+                    </div>
+                    <div class="field-container" style="left: 281px; top: 26px;">
+                         <label class="label" for="father-name">Father's Name:</label>
+                            <input class="input-box" type="text" name="father-name" placeholder="Enter Father's Name" required="True"/>
+                    </div>
+                    <div class="field-container" style="left: 561px; top: 26px;">
+                        <label class="label" for="grand-father-name">Grandfather's Name:</label>
+                            <input class="input-box" type="text" name="grand-father-name" placeholder="Enter Grandfather's Name" required="True"/>
+                    </div>
+                    <div class="field-container" style="left: 1px; top: 106px;">
+
+                        <label class="label" for="dob">Date of Birth:</label>
+                        <input class="input-box" type="date" name="dob" placeholder="DD-MM-YYYY" required="True"/>
+                    </div>
+                    <div class="field-container" style="left: 281px; top: 106px;">
+                         <label class="label" for="gender">Gender:</label>
+                          <select  class="input-box" name="gender" required="True">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                    </div>
+                </div>
+
+            </div>
+        `;
+
+        container.appendChild(newSection);
+    }
+
+
+
+function showNextSection(nextSectionId, currentSectionId) {
+    // val = validateSection(currentSectionId);
+    val = true
+
+    if (val) {
+        var activeLink = document.querySelector(".sidebar .nav-link.active");
+        console.log(activeLink);
+        var nextLink = activeLink.parentElement.nextElementSibling.querySelector(".nav-link");
+        if (nextLink) {
+            nextLink.classList.remove("disabled");
+            showSection(nextSectionId, nextLink);
+        }
+    }
+}
+//
+//
+//function navigateToNextSection(currentIndex) {
+//const nextIndex = currentIndex + 1;
+//if (nextIndex < document.querySelectorAll('.content > div
+//
+//
+//    function toggleAccordion() {
+//        var accordionContent = document.getElementById('accordionContent');
+//        accordionContent.classList.toggle('show');
+//    }
+//
+//    document.getElementById('farmerYes').addEventListener('change', function () {
+//        if (this.checked) {
+//            addFarmerAccordion();
+//        }
+//    });
