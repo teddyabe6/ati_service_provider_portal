@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template
-        id="ati_individual_registrant_form_template"
-        inherit_id="g2p_service_provider_beneficiary_management.individual_registrant_form_template"
+        id="ati_individual_registrant_update_form_template"
+        inherit_id="g2p_service_provider_beneficiary_management.individual_update_form_template"
         customize_show="True"
         name="ati"
         priority="200">
 
         <xpath expr="//div[hasclass('main-container')]" position="replace">
             <div class="container-adjuster">
-                <h5 class="all-title">Create Farmer</h5>
+                <h5 class="all-title">Update Farmer</h5>
                 <div class="form-template">
 
                     <ol class="breadcrumb form-layout-breadcrumb">
@@ -24,14 +24,14 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            Create Farmer
+                            Update Farmer
                         </li>
                     </ol>
 
 
                     <form
-                        id="creategroupForm"
-                        action="/serviceprovider/individual/beneficiary/create/submit"
+                        id="updategroupForm"
+                        action="/serviceprovider/individual/update/submit"
                         method="POST"
                         enctype="multipart/form-data">
 
@@ -96,9 +96,27 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    <div class="s_website_form_field" style="display: none;">
+                                        <label class="s_website_form_label" for="id holder">
+                                            <span
+                                                class="s_website_form_label_content"
+                                                style="color: #666666;"
+                                            >id holder
+                                            </span>
+
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="id_holder"
+                                            name="id holder"
+                                            class="form-control"
+                                            placeholder="id holder"
+                                            t-att-value="beneficiary.id"
+                                        />
+                                    </div>
                                     <main role="main" class="content">
 
-                                        <div id="id-section" class="section-container">
+                                    <div id="id-section" class="section-container">
                                             <div class="row section-content">
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="s_website_form_field">
@@ -141,8 +159,7 @@
                                                             name="uid"
                                                             class="form-control"
                                                             placeholder="UID"
-                                                            required="required"
-                                                            />
+                                                            required="required" />
                                                     </div>
                                                     <div class="error-message"
                                                         id="uid_error"
@@ -152,7 +169,8 @@
                                                     <div
                                                         class="s_website_form_field"
                                                         id="rid-div"
-                                                        style="display: none;">
+                                                        style="display: none;"
+                                                    >
                                                         <label class="s_website_form_label"
                                                             for="name">
                                                             <span
@@ -166,7 +184,8 @@
                                                             id="rid_input"
                                                             name="rid"
                                                             class="form-control"
-                                                            placeholder="RID"/>
+                                                            placeholder="RID"
+                                                        />
                                                     </div>
                                                 </div>
                                             </div>
@@ -180,9 +199,9 @@
                                                 >NEXT<span>&#x276F;</span></button>
                                             </div>
                                         </div>
-
-                                        <div id="individual-details" class="section-container"
-                                           >
+                                        
+                                      <div id="individual-details" class="section-container"
+                                            style="display: none;">
 
                                             <div class="section-content">
 
@@ -214,7 +233,7 @@
                                                                             t-as="option">
                                                                             <option
                                                                                 t-att-value="option.id"
-                                                                                >
+                                                                                t-att-selected="option.id == beneficiary.primary_Language.id">
                                                                                 <t
                                                                                     t-esc="option.name" />
                                                                             </option>
@@ -245,6 +264,7 @@
                                                                 name="given_name"
                                                                 class="form-control"
                                                                 required="required"
+                                                                t-att-value="beneficiary.given_name" 
                                                                 placeholder="Enter Name"/>
                                                         </div>
                                                     </div>
@@ -266,6 +286,7 @@
                                                                 name="family_name"
                                                                 class="form-control"
                                                                 required="required"
+                                                                t-att-value="beneficiary.family_name" 
                                                                 placeholder="Enter Name"/>
                                                         </div>
                                                     </div>
@@ -288,6 +309,7 @@
                                                                 name="gf_name_eng"
                                                                 class="form-control"
                                                                 required="required"
+                                                                t-att-value="beneficiary.gf_name_eng"
                                                                 placeholder="Enter Name" />
                                                         </div>
                                                     </div>
@@ -311,6 +333,7 @@
                                                                 name="first_name_amh"
                                                                 class="form-control"
                                                                 required="required"
+                                                                t-att-value="beneficiary.first_name_amh" 
                                                                 placeholder="Enter Name"
                                                                 />
                                                         </div>
@@ -332,6 +355,7 @@
                                                                 name="family_name_amh"
                                                                 class="form-control"
                                                                 required="required"
+                                                                t-att-value="beneficiary.family_name_amh"
                                                                 placeholder="Enter Name" />
                                                         </div>
                                                     </div>
@@ -352,6 +376,7 @@
                                                                 name="gf_name_amh"
                                                                 class="form-control"
                                                                 required="required"
+                                                                t-att-value="beneficiary.gf_name_amh" 
                                                                 placeholder="Enter Name"/>
                                                         </div>
                                                     </div>
@@ -400,6 +425,7 @@
                                                                         >
                                                                             <option
                                                                                 t-att-value="option.id"
+                                                                                t-att-selected="option.id == beneficiary.regionn.id"
                                                                             >
                                                                                 <t
                                                                                     t-esc="option.name" />
@@ -434,7 +460,8 @@
                                                                         <t t-foreach="zone"
                                                                             t-as="option">
                                                                             <option
-                                                                                t-att-value="option.id">
+                                                                                t-att-value="option.id"
+                                                                                t-att-selected="option.id == beneficiary.zone.id">
                                                                                 <t
                                                                                     t-esc="option.name" />
                                                                             </option>
@@ -468,7 +495,8 @@
                                                                         <t t-foreach="woreda"
                                                                             t-as="option">
                                                                             <option
-                                                                                t-att-value="option.id">
+                                                                                t-att-value="option.id"
+                                                                                t-att-selected="option.id == beneficiary.woreda.id">
                                                                                 <t
                                                                                     t-esc="option.name" />
                                                                             </option>
@@ -505,7 +533,8 @@
                                                                         <t t-foreach="kebele"
                                                                             t-as="option">
                                                                             <option
-                                                                                t-att-value="option.id">
+                                                                                t-att-value="option.id"
+                                                                                t-att-selected="option.id == beneficiary.kebele.id">
                                                                                 <t
                                                                                     t-esc="option.name" />
                                                                             </option>
@@ -540,6 +569,7 @@
                                                                 class="form-control date-picker"
                                                                 required="required"
                                                                 placeholder="DD-MM-YYYY"
+                                                                t-att-value="beneficiary.birthdate"
                                                             />
                                                         </div>
                                                     </div>
@@ -564,6 +594,7 @@
                                                                         name="gender"
                                                                         t-att-data-text="option.code"
                                                                         t-att-value="option.value"
+                                                                        t-att-checked="option.value == beneficiary.gender"
                                                                         required="required" />
                                                                     <label
                                                                         class="form-check-label ms-2"
@@ -603,7 +634,8 @@
                                                                 <option value="">Select</option>
                                                                 <t t-foreach="has_personal_phone"
                                                                     t-as="option">
-                                                                    <option t-att-value="option.id">
+                                                                    <option t-att-value="option.id"
+                                                                        t-att-selected="option.id == has_personal_phone_selection_id">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
@@ -630,6 +662,7 @@
                                                                 name="primary_phone"
                                                                 class="form-control"
                                                                 required="required"
+                                                                t-att-value="primary_phone"
                                                                 placeholder="Enter Phone Number" />
                                                         </div>
                                                     </div>
@@ -652,6 +685,7 @@
                                                                 name="other_phone"
                                                                 class="form-control"
                                                                 required="required"
+                                                                t-att-value="other_phone"
                                                                 placeholder="Enter Phone Number" />
                                                         </div>
                                                     </div>
@@ -661,7 +695,7 @@
                                                             class="s_website_form_field lmargin-input"
                                                          style="margin-top: 5%; margin-right: -10%;">
 
-
+                                                         
                                                             <label class="s_website_form_label"
                                                                 for="secondary_phone">
                                                                 <span
@@ -669,12 +703,13 @@
                                                                     style="color: #666666;">
                                                                     Secondary Phone Number
                                                                 </span>
-
+                                                                
 
                                                             </label>
                                                             <input type="text" id="secondary_phone"
                                                                 name="secondary_phone"
                                                                 class="form-control"
+                                                                t-att-value="secondary_phone" 
                                                                 placeholder="Enter Phone Number"
                                                                />
                                                         </div>
@@ -684,7 +719,7 @@
                                                 </div>
                                                 <div class="row">
 
-
+                                                    
 
                                                     <div class="col-lg-4 ">
                                                         <div
@@ -702,12 +737,13 @@
                                                             <input type="text" id="email"
                                                                 name="email"
                                                                 class="form-control"
+                                                                t-att-value="beneficiary.email"
                                                                 placeholder="Enter Email" />
                                                         </div>
                                                     </div>
+                                               
 
-
-
+                                                
 
                                                     <div class="col-lg-4">
                                                         <div
@@ -727,7 +763,8 @@
                                                                 <option value="">Select</option>
                                                                 <t t-foreach="disability_status"
                                                                     t-as="option">
-                                                                    <option t-att-value="option.id">
+                                                                    <option t-att-value="option.id"
+                                                                        t-att-selected="option.id == disability_status_selection_id">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
@@ -757,20 +794,21 @@
                                                                 <t t-foreach="farming_type"
                                                                     t-as="option">
 
-                                                                    <option t-att-value="option.id">
+                                                                    <option t-att-value="option.id"
+                                                                        t-att-selected="option.id == farming_type_selection_id">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
                                                             </select>
                                                         </div>
-
+                                                    
 
 
                                                 </div>
                                             </div>
 
 
-
+                                                
 
 
                                             </div>
@@ -787,7 +825,7 @@
 
                                         </div>
 
-                                        <div id="membership-details" class="section-container"
+                                         <div id="membership-details" class="section-container"
                                             style="display: none;">
                                             <div class="section-content">
 
@@ -814,6 +852,7 @@
                                                                         name="is_member_of_primary_coop"
                                                                         t-att-data-text="option.name"
                                                                         t-att-value="option.id"
+                                                                        t-att-checked="option.id == is_member_of_primary_cooperative_selection_id"
                                                                         required="required" />
                                                                     <label
                                                                         class="form-check-label ms-2"
@@ -845,7 +884,8 @@
                                                                 <option value=" ">Select</option>
                                                                 <t t-foreach="primary_cooperatives"
                                                                     t-as="option">
-                                                                    <option t-att-value="option.id">
+                                                                    <option t-att-value="option.id"
+                                                                        t-att-selected="option.id == beneficiary.primary_cooperatives.id">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
@@ -876,6 +916,7 @@
                                                                         name="is_member_of_coop_union"
                                                                         t-att-data-text="option.name"
                                                                         t-att-value="option.id"
+                                                                        t-att-checked="option.id == is_member_of_cooperative_union_selection_id"
                                                                         required="required" />
                                                                     <label
                                                                         class="form-check-label ms-2"
@@ -907,7 +948,8 @@
                                                                 <option value=" ">Select</option>
                                                                 <t t-foreach="cooperative_unions"
                                                                     t-as="option">
-                                                                    <option t-att-value="option.id">
+                                                                    <option t-att-value="option.id"
+                                                                        t-att-selected="option.id == beneficiary.cooperative_unions.id">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
@@ -939,6 +981,7 @@
                                                                             name="in_farmer_cluster"
                                                                             t-att-data-text="option.name"
                                                                             t-att-value="option.id"
+                                                                            t-att-checked="option.id == is_member_in_farmer_cluster_selection_id"
                                                                             required="required" />
                                                                         <label
                                                                             class="form-check-label ms-2"
@@ -971,7 +1014,8 @@
                                                                 <option value=" ">Select</option>
                                                                 <t t-foreach="primary_commodities"
                                                                     t-as="option">
-                                                                    <option t-att-value="option.id">
+                                                                    <option t-att-value="option.id"
+                                                                        t-att-selected="option.id == beneficiary.primary_commodity.id">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
@@ -997,7 +1041,8 @@
                                                                 <option value=" ">Select</option>
                                                                 <t t-foreach="role_in_cluster"
                                                                     t-as="option">
-                                                                    <option t-att-value="option.id">
+                                                                    <option t-att-value="option.id"
+                                                                        t-att-selected="option.id == role_in_cluster_selection_id">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
@@ -1021,152 +1066,308 @@
                                             style="display: none;">
                                             <div class="section-content">
                                                 <div id="section-content-land">
-                                                    <div id="land-section-content">
-                                                        <div class="container-fluid pl-3 pr-5">
-                                                            <hr class="land-separator"></hr>
-                                                        </div>
-                                                        <div class="land-section-wrapper"
-                                                            id="land-section-repeat"
-                                                            data-index="0">
-                                                            <div class="container-fluid px-5">
-
-                                                                <div class="row pt-3 pb-1">
-                                                                    <div
-                                                                        class="row col-11 land_container2">
-
-                                                                        <div class="col-3">
-                                                                            <label
-                                                                                class="s_website_form_label">
-                                                                                <span
-                                                                                    class="s_website_form_label_content"
-                                                                                    style="color: #666666;">
-                                                                                    Ownership
-                                                                                    Type
-                                                                                </span>
-                                                                                <span
-                                                                                    class="s_website_form_mark">
-                                                                                    *</span>
-                                                                            </label>
-                                                                            <select
-                                                                                id="land_selection"
-                                                                                class="form-select"
-                                                                                name="land_ownership_type_0"
-                                                                                required="required">
-                                                                                <option value="">
-                                                                                    Select Type</option>
-                                                                                <t
-                                                                                    t-foreach="ownership_type_selections"
-                                                                                    t-as="option">
-                                                                                    <option
-                                                                                        t-att-value="option.id"
-                                                                                    >
-                                                                                        <t
-                                                                                            t-esc="option.name" />
-                                                                                    </option>
-                                                                                </t>
-                                                                            </select>
-
-
-                                                                        </div>
-
-                                                                        <div class="col-3">
-                                                                            <label
-                                                                                class="s_website_form_label">
-                                                                                <span
-                                                                                    class="s_website_form_label_content"
-                                                                                    style="color: #666666;">
-                                                                                    Total Land
-                                                                                    Area
-                                                                                </span>
-                                                                                <span
-                                                                                    class="s_website_form_mark">
-                                                                                    *</span>
-                                                                            </label>
-                                                                            <input type="text"
-                                                                                id="total_land_area"
-                                                                                name="total_land_area_0"
-                                                                                class="form-control"
-                                                                                required="required"
-                                                                                placeholder="Enter Land Area"
-                                                                            />
-                                                                        </div>
-
-                                                                        <div class="col-3">
-                                                                            <label
-                                                                                class="s_website_form_label">
-                                                                                <span
-                                                                                    class="s_website_form_label_content"
-                                                                                    style="color: #666666;">
-                                                                                    Land ID
-                                                                                </span>
-                                                                                <span
-                                                                                    class="s_website_form_mark">
-                                                                                    *</span>
-                                                                            </label>
-                                                                            <input type="text"
-                                                                                id="land_id"
-                                                                                name="land_id_0"
-                                                                                class="form-control"
-                                                                                required="required"
-                                                                                placeholder="Enter Land ID"
-                                                                            />
-                                                                        </div>
-
-                                                                        <div class="col-3">
-                                                                            <label
-                                                                                class="s_website_form_label">
-                                                                                <span
-                                                                                    class="s_website_form_label_content"
-                                                                                    style="color: #666666;">
-                                                                                    Land
-                                                                                    Certificate
-                                                                                </span>
-
-                                                                            </label>
-                                                                            <div>
-                                                                                <label
-                                                                                    for="land_certificate_0"
-                                                                                    class="custom-file-upload">
-                                                                                    <span
-                                                                                        class="upload-text">
-                                                                                        Upload</span>
-
-                                                                                    <span>
-                                                                                        <i
-                                                                                            class="fas fa-upload"></i>
-                                                                                    </span>
-                                                                                </label>
-                                                                                <input
-                                                                                    type="file"
-                                                                                    id="land_certificate_0"
-                                                                                    name="land_certificate_0"
-                                                                                    class="form-control"
-                                                                                    onchange="updateFileName(this)"
-                                                                                />
-
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                    <div class="col-1 my-3">
-                                                                        <button type="button"
-                                                                            class="btn btn-outline-secondary btn-sm my-3 "
-                                                                            onclick="deleteLand(this)">
-                                                                            <i
-                                                                                class="fas fa-trash-alt"></i>
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-
-
-                                                            </div>
-                                                            <div
-                                                                class="container-fluid pl-3 pr-5">
+                                                    <t t-if="not land_info_data">
+                                                        <div id="land-section-content">
+                                                            <div class="container-fluid pl-3 pr-5">
                                                                 <hr class="land-separator"></hr>
                                                             </div>
+                                                            <div class="land-section-wrapper"
+                                                                id="land-section-repeat"
+                                                                data-index="0">
+                                                                <div class="container-fluid px-5">
+
+                                                                    <div class="row pt-3 pb-1">
+                                                                        <div
+                                                                            class="row col-11 land_container2">
+
+                                                                            <div class="col-3">
+                                                                                <label
+                                                                                    class="s_website_form_label">
+                                                                                    <span
+                                                                                        class="s_website_form_label_content"
+                                                                                        style="color: #666666;">
+                                                                                        Ownership
+                                                                                        Type
+                                                                                    </span>
+                                                                                    <span
+                                                                                        class="s_website_form_mark">
+                                                                                        *</span>
+                                                                                </label>
+                                                                                <select
+                                                                                    id="land_selection"
+                                                                                    class="form-select"
+                                                                                    name="land_ownership_type_0"
+                                                                                    required="required">
+                                                                                    <option value="">
+                                                                                        Select Type</option>
+                                                                                    <t
+                                                                                        t-foreach="ownership_type_selections"
+                                                                                        t-as="option">
+                                                                                        <option
+                                                                                            t-att-value="option.id"
+                                                                                        >
+                                                                                            <t
+                                                                                                t-esc="option.name" />
+                                                                                        </option>
+                                                                                    </t>
+                                                                                </select>
+
+
+                                                                            </div>
+
+                                                                            <div class="col-3">
+                                                                                <label
+                                                                                    class="s_website_form_label">
+                                                                                    <span
+                                                                                        class="s_website_form_label_content"
+                                                                                        style="color: #666666;">
+                                                                                        Total Land
+                                                                                        Area
+                                                                                    </span>
+                                                                                    <span
+                                                                                        class="s_website_form_mark">
+                                                                                        *</span>
+                                                                                </label>
+                                                                                <input type="text"
+                                                                                    id="total_land_area"
+                                                                                    name="total_land_area_0"
+                                                                                    class="form-control"
+                                                                                    required="required"
+                                                                                    placeholder="Enter Land Area"
+                                                                                />
+                                                                            </div>
+
+                                                                            <div class="col-3">
+                                                                                <label
+                                                                                    class="s_website_form_label">
+                                                                                    <span
+                                                                                        class="s_website_form_label_content"
+                                                                                        style="color: #666666;">
+                                                                                        Land ID
+                                                                                    </span>
+                                                                                    <span
+                                                                                        class="s_website_form_mark">
+                                                                                        *</span>
+                                                                                </label>
+                                                                                <input type="text"
+                                                                                    id="land_id"
+                                                                                    name="land_id_0"
+                                                                                    class="form-control"
+                                                                                    required="required"
+                                                                                    placeholder="Enter Land ID"
+                                                                                />
+                                                                            </div>
+
+                                                                            <div class="col-3">
+                                                                                <label
+                                                                                    class="s_website_form_label">
+                                                                                    <span
+                                                                                        class="s_website_form_label_content"
+                                                                                        style="color: #666666;">
+                                                                                        Land
+                                                                                        Certificate
+                                                                                    </span>
+
+                                                                                </label>
+                                                                                <div>
+                                                                                    <label
+                                                                                        for="land_certificate_0"
+                                                                                        class="custom-file-upload">
+                                                                                        <span
+                                                                                            class="upload-text">
+                                                                                            Upload</span>
+
+                                                                                        <span>
+                                                                                            <i
+                                                                                                class="fas fa-upload"></i>
+                                                                                        </span>
+                                                                                    </label>
+                                                                                    <input
+                                                                                        type="file"
+                                                                                        id="land_certificate_0"
+                                                                                        name="land_certificate_0"
+                                                                                        class="form-control"
+                                                                                        onchange="updateFileName(this)"
+                                                                                    />
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-1 my-3">
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-secondary btn-sm my-3 "
+                                                                                onclick="deleteLand(this)">
+                                                                                <i
+                                                                                    class="fas fa-trash-alt"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                                <div
+                                                                    class="container-fluid pl-3 pr-5">
+                                                                    <hr class="land-separator"></hr>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                        
+                                                    </t>
+    
+                                                    <t t-else="">
+                                                        <div id="land-section-content">
+                                                            <div class="container-fluid pl-3 pr-5">
+                                                                <hr class="land-separator"></hr>
+                                                            </div>
+                                                            <t t-foreach="land_info_data"
+                                                                t-as="land_info" t-esc-options='{"t-key": "index"}'>
+    
+                                                                <div class="land-section-wrapper" 
+                                                                    id="land-section-repeat" t-att-data-index="land_info['index']">
+                                                                    <div class="container-fluid px-5">
+    
+                                                                        <div class="row pt-3 pb-1">
+                                                                            <div
+                                                                                class="row col-11 land_container2">
+    
+                                                                                <div class="col-3">
+                                                                                    <label
+                                                                                        class="s_website_form_label">
+                                                                                        <span
+                                                                                            class="s_website_form_label_content"
+                                                                                            style="color: #666666;">
+                                                                                            Ownership
+                                                                                            Type
+                                                                                        </span>
+                                                                                        <span
+                                                                                            class="s_website_form_mark">
+                                                                                            *</span>
+                                                                                    </label>
+                                                                                    <select
+                                                                                        id="land_selection"
+                                                                                        class="form-select"
+                                                                                        t-att-name="'land_ownership_type_' + str(land_info['index'])"
+                                                                                        required="required">
+                                                                                        <option value="">
+                                                                                            Select Type</option>
+                                                                                        <t
+                                                                                            t-foreach="ownership_type_selections"
+                                                                                            t-as="option">
+                                                                                            <option
+                                                                                                t-att-value="option.id"
+                                                                                                t-att-selected="option.id == land_info['ownership_type_selection_id']">
+                                                                                                <t
+                                                                                                    t-esc="option.name" />
+                                                                                            </option>
+                                                                                        </t>
+                                                                                    </select>
+                                                                                </div>
+    
+                                                                                <div class="col-3">
+                                                                                    <label
+                                                                                        class="s_website_form_label">
+                                                                                        <span
+                                                                                            class="s_website_form_label_content"
+                                                                                            style="color: #666666;">
+                                                                                            Total Land
+                                                                                            Area
+                                                                                        </span>
+                                                                                        <span
+                                                                                            class="s_website_form_mark">
+                                                                                            *</span>
+                                                                                    </label>
+                                                                                    <input type="text"
+                                                                                        id="total_land_area"
+                                                                                        t-att-name="'total_land_area' + str(land_info['index'])"
+                                                                                        class="form-control"
+                                                                                        required="required"
+                                                                                        t-att-value="land_info['total_land_area']"
+                                                                                        placeholder="Enter Land Area" />
+                                                                                </div>
+    
+                                                                                <div class="col-3">
+                                                                                    <label
+                                                                                        class="s_website_form_label">
+                                                                                        <span
+                                                                                            class="s_website_form_label_content"
+                                                                                            style="color: #666666;">
+                                                                                            Land ID
+                                                                                        </span>
+                                                                                        <span
+                                                                                            class="s_website_form_mark">
+                                                                                            *</span>
+                                                                                    </label>
+                                                                                    <input type="text"
+                                                                                        id="land_id"
+                                                                                        t-att-name="'land_id' + str(land_info['index'])"
+                                                                                        class="form-control"
+                                                                                        required="required"
+                                                                                        t-att-value="land_info['total_land_area']" 
+                                                                                        placeholder="Enter Land ID"/>
+                                                                                </div>
+    
+                                                                                <div class="col-3">
+                                                                                    <label
+                                                                                        class="s_website_form_label">
+                                                                                        <span
+                                                                                            class="s_website_form_label_content"
+                                                                                            style="color: #666666;">
+                                                                                            Land
+                                                                                            Certificate
+                                                                                        </span>
+                                                                                        
+                                                                                    </label>
+                                                                                    <div>
+                                                                                        <label
+                                                                                            t-att-for="'land_certificate_' + str(land_info['index'])"
+                                                                                            class="custom-file-upload">
+                                                                                            <span
+                                                                                                class="upload-text">
+                                                                                                Upload</span>
+    
+                                                                                            <span>
+                                                                                                <i
+                                                                                                    class="fas fa-upload"></i>
+                                                                                            </span>
+                                                                                        </label>
+                                                                                        <input
+                                                                                            type="file"
+                                                                                            t-att-id="'land_certificate_' + str(land_info['index'])"
+                                                                                            t-att-name="'land_certificate_' + str(land_info['index'])"
+                                                                                            class="form-control"
+                                                                                            onchange="updateFileName(this)"
+                                                                                        />
+    
+                                                                                    </div>
+                                                                                </div>
+    
+                                                                            </div>
+    
+                                                                            <div class="col-1 my-3">
+                                                                                <button type="button"
+                                                                                    class="btn btn-outline-secondary btn-sm my-3 "
+                                                                                    onclick="deleteLand(this)">
+                                                                                    <i
+                                                                                        class="fas fa-trash-alt"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+    
+    
+                                                                    </div>
+                                                                    <div
+                                                                        class="container-fluid pl-3 pr-5">
+                                                                        <hr class="land-separator"></hr>
+                                                                    </div>
+                                                                </div>
+    
+    
+                                                            </t>
+                                                        </div>
+    
+                                                    </t>
 
                                                     <div id="land-hidden-template" style="display: none;">
                                                         <div class="land-section-wrapper"
@@ -1351,7 +1552,7 @@
                                                                     production?</span>
                                                                 <span class="s_website_form_mark"> *</span>
                                                             </label>
-
+                                                    
                                                             <select class="selectpicker"
                                                                 name="crop_water_source"
                                                                 multiple="multiple"
@@ -1363,7 +1564,8 @@
                                                                 <t t-foreach="water_source"
                                                                     t-as="option">
                                                                     <option
-                                                                        t-att-value="option.id">
+                                                                        t-att-value="option.id"
+                                                                        t-att-selected="'selected' if option.id in (beneficiary.crop_water_sources.ids or []) else None">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
@@ -1376,134 +1578,267 @@
 
                                                 </div>
                                                 <div id="section-content-crop">
-                                                    <div id="crop-section-content">
-                                                        <div class="container-fluid pl-3 pr-5">
-                                                            <hr class="land-separator"></hr>
-                                                        </div>
-                                                        <div class="crop-section-wrapper"
-                                                            id="crop-section-repeat" data-index="0">
-                                                            <div class="container-fluid px-5">
-
-                                                                <div class="row pt-3 pb-1">
-                                                                    <div
-                                                                        class="row col-11 land_container2">
-
-                                                                        <div class="col-5">
-                                                                            <label
-                                                                                class="s_website_form_label">
-                                                                                <span
-                                                                                    class="s_website_form_label_content"
-                                                                                    style="color: #666666;">Which
-                                                                                    commodity do you
-                                                                                    produce?</span>
-                                                                                <span
-                                                                                    class="s_website_form_mark">
-                                                                                    *</span>
-                                                                            </label>
-                                                                            <select
-                                                                                id="crops_selection"
-                                                                                class="form-select"
-                                                                                name="crops_0"
-                                                                                required="required"
-                                                                            >
-                                                                                <option value=" ">
-                                                                                    Select</option>
-                                                                                <t t-foreach="crops"
-                                                                                    t-as="option">
-                                                                                    <option
-                                                                                        t-att-value="option.id"
-                                                                                    >
-                                                                                        <t
-                                                                                            t-esc="option.name" />
-                                                                                    </option>
-                                                                                </t>
-                                                                            </select>
-
-                                                                        </div>
-
-                                                                        <div class="col-3">
-                                                                            <label
-                                                                                class="s_website_form_label">
-                                                                                <span
-                                                                                    class="s_website_form_label_content"
-                                                                                    style="color: #666666;">Is
-                                                                                    the crop
-                                                                                    diseased</span>
-                                                                                <span
-                                                                                    class="s_website_form_mark">
-                                                                                    *</span>
-                                                                            </label>
-                                                                            <select
-                                                                                id="crop-is-diseased-selection"
-                                                                                class="form-select"
-                                                                                name="crop_is_diseased_0"
-                                                                                required="required"
-                                                                            >
-                                                                                <option value=" ">
-                                                                                    Select</option>
-                                                                                <t
-                                                                                    t-foreach="crop_is_diseased_selections"
-                                                                                    t-as="option">
-                                                                                    <option
-                                                                                        t-att-value="option.id"
-                                                                                    >
-                                                                                        <t
-                                                                                            t-esc="option.name" />
-                                                                                    </option>
-                                                                                </t>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div class="col-4">
-                                                                            <label
-                                                                                class="s_website_form_label">
-                                                                                <span
-                                                                                    class="s_website_form_label_content"
-                                                                                    style="color: #666666;">Diseases
-                                                                                    affecting the
-                                                                                    crop</span>
-                                                                                <span
-                                                                                    class="s_website_form_mark">
-                                                                                    *</span>
-                                                                            </label>
-                                                                            <div id="crop_illness_types_0"
-                                                                                name="crop_illness_types_0[]">
-                                                                            </div>
-
-                                                                        </div>
-
-
-                                                                    </div>
-
-                                                                    <div class="col-1 my-3">
-                                                                        <button type="button"
-                                                                            class="btn btn-outline-secondary btn-sm my-3 "
-                                                                            onclick="deleteCrop(this)">
-                                                                            <i
-                                                                                class="fas fa-trash-alt"></i>
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-
-
-                                                            </div>
-                                                            <div
-                                                                class="container-fluid pl-3 pr-5">
+                                                    <t t-if="not crop_info_data">
+                                                        <div id="crop-section-content">
+                                                            <div class="container-fluid pl-3 pr-5">
                                                                 <hr class="land-separator"></hr>
                                                             </div>
+                                                            <div class="crop-section-wrapper"
+                                                                id="crop-section-repeat" data-index="0">
+                                                                <div class="container-fluid px-5">
+    
+                                                                    <div class="row pt-3 pb-1">
+                                                                        <div
+                                                                            class="row col-11 land_container2">
+    
+                                                                            <div class="col-5">
+                                                                                <label
+                                                                                    class="s_website_form_label">
+                                                                                    <span
+                                                                                        class="s_website_form_label_content"
+                                                                                        style="color: #666666;">Which
+                                                                                        commodity do you
+                                                                                        produce?</span>
+                                                                                    <span
+                                                                                        class="s_website_form_mark">
+                                                                                        *</span>
+                                                                                </label>
+                                                                                <select
+                                                                                    id="crops_selection"
+                                                                                    class="form-select"
+                                                                                    name="crops_0"
+                                                                                    required="required"
+                                                                                >
+                                                                                    <option value=" ">
+                                                                                        Select</option>
+                                                                                    <t t-foreach="crops"
+                                                                                        t-as="option">
+                                                                                        <option
+                                                                                            t-att-value="option.id"
+                                                                                        >
+                                                                                            <t
+                                                                                                t-esc="option.name" />
+                                                                                        </option>
+                                                                                    </t>
+                                                                                </select>
+    
+                                                                            </div>
+    
+                                                                            <div class="col-3">
+                                                                                <label
+                                                                                    class="s_website_form_label">
+                                                                                    <span
+                                                                                        class="s_website_form_label_content"
+                                                                                        style="color: #666666;">Is
+                                                                                        the crop
+                                                                                        diseased</span>
+                                                                                    <span
+                                                                                        class="s_website_form_mark">
+                                                                                        *</span>
+                                                                                </label>
+                                                                                <select
+                                                                                    id="crop-is-diseased-selection"
+                                                                                    class="form-select"
+                                                                                    name="crop_is_diseased_0"
+                                                                                    required="required"
+                                                                                >
+                                                                                    <option value=" ">
+                                                                                        Select</option>
+                                                                                    <t
+                                                                                        t-foreach="crop_is_diseased_selections"
+                                                                                        t-as="option">
+                                                                                        <option
+                                                                                            t-att-value="option.id"
+                                                                                        >
+                                                                                            <t
+                                                                                                t-esc="option.name" />
+                                                                                        </option>
+                                                                                    </t>
+                                                                                </select>
+                                                                            </div>
+    
+                                                                            <div class="col-4">
+                                                                                <label
+                                                                                    class="s_website_form_label">
+                                                                                    <span
+                                                                                        class="s_website_form_label_content"
+                                                                                        style="color: #666666;">Diseases
+                                                                                        affecting the
+                                                                                        crop</span>
+                                                                                    <span
+                                                                                        class="s_website_form_mark">
+                                                                                        *</span>
+                                                                                </label>
+                                                                                <div id="crop_illness_types_0"
+                                                                                    name="crop_illness_types_0[]">
+                                                                                </div>
+                                                                            
+                                                                            </div>
+    
+    
+                                                                        </div>
+    
+                                                                        <div class="col-1 my-3">
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-secondary btn-sm my-3 "
+                                                                                onclick="deleteCrop(this)">
+                                                                                <i
+                                                                                    class="fas fa-trash-alt"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+    
+    
+                                                                </div>
+                                                                <div
+                                                                    class="container-fluid pl-3 pr-5">
+                                                                    <hr class="land-separator"></hr>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-
+    
+                                                    </t>
+    
+                                                    <t t-else="">
+                                                        <div id="crop-section-content">
+                                                            <div class="container-fluid pl-3 pr-5">
+                                                                <hr class="land-separator"></hr>
+                                                            </div>
+                                                            <t t-foreach="crop_info_data"
+                                                                t-as="crop_info" t-esc-options='{"t-key": "index"}'>
+    
+                                                                <div class="crop-section-wrapper"
+                                                                    id="crop-section-repeat" t-att-data-index="crop_info['index']">
+                                                                    <div class="container-fluid px-5">
+    
+                                                                        <div class="row pt-3 pb-1">
+                                                                            <div
+                                                                                class="row col-11 land_container2">
+    
+                                                                                <div class="col-5">
+                                                                                    <label
+                                                                                        class="s_website_form_label">
+                                                                                        <span
+                                                                                            class="s_website_form_label_content"
+                                                                                            style="color: #666666;">Which
+                                                                                            commodity do
+                                                                                            you
+                                                                                            produce?</span>
+                                                                                        <span
+                                                                                            class="s_website_form_mark">
+                                                                                            *</span>
+                                                                                    </label>
+                                                                                    <select
+                                                                                        id="crops_selection"
+                                                                                        class="form-select"
+                                                                                        t-att-name="'crops_' + str(crop_info['index'])"
+                                                                                        required="required"
+                                                                                    >
+                                                                                        <option
+                                                                                            value=" ">
+                                                                                            Select</option>
+                                                                                        <t
+                                                                                            t-foreach="crops"
+                                                                                            t-as="option">
+                                                                                            <option
+                                                                                                t-att-value="option.id"
+                                                                                                t-att-selected="option.id == crop_info['crop'].id"
+                                                                                            >
+                                                                                                <t
+                                                                                                    t-esc="option.name" />
+                                                                                            </option>
+                                                                                        </t>
+                                                                                    </select>
+    
+                                                                                </div>
+    
+                                                                                <div class="col-3">
+                                                                                    <label
+                                                                                        class="s_website_form_label">
+                                                                                        <span
+                                                                                            class="s_website_form_label_content"
+                                                                                            style="color: #666666;">Is
+                                                                                            the crop
+                                                                                            diseased</span>
+                                                                                        <span
+                                                                                            class="s_website_form_mark">
+                                                                                            *</span>
+                                                                                    </label>
+                                                                                    <select
+                                                                                        id="crop-is-diseased-selection"
+                                                                                        class="form-select"
+                                                                                        t-att-name="'crop_is_diseased_' + str(crop_info['index'])"
+                                                                                        required="required"
+                                                                                    >
+                                                                                        <option
+                                                                                            value=" ">
+                                                                                            Select</option>
+                                                                                        <t
+                                                                                            t-foreach="crop_is_diseased_selections"
+                                                                                            t-as="option">
+                                                                                            <option
+                                                                                                t-att-value="option.id"
+                                                                                                t-att-selected="option.id == crop_info['crop_is_diseased_selection_id']"
+                                                                                            >
+                                                                                                <t
+                                                                                                    t-esc="option.name" />
+                                                                                            </option>
+                                                                                        </t>
+                                                                                    </select>
+                                                                                </div>
+    
+                                                                                <div class="col-4">
+                                                                                    <label
+                                                                                        class="s_website_form_label">
+                                                                                        <span
+                                                                                            class="s_website_form_label_content"
+                                                                                            style="color: #666666;">Diseases
+                                                                                            affecting
+                                                                                            the crop</span>
+                                                                                        <span
+                                                                                            class="s_website_form_mark">
+                                                                                            *</span>
+                                                                                    </label>
+                                                                                    <div t-att-id="'crop_illness_types_' + str(crop_info['index'])" t-att-name="'crop_illness_types_' + str(crop_info['index']) + '[]'" ></div>
+                                                                                    
+                                                                                </div>
+    
+    
+                                                                            </div>
+    
+                                                                            <div class="col-1 my-3">
+                                                                                <button type="button"
+                                                                                    class="btn btn-outline-secondary btn-sm my-3 "
+                                                                                    onclick="deleteCrop(this)">
+                                                                                    <i
+                                                                                        class="fas fa-trash-alt"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+    
+    
+                                                                    </div>
+                                                                    <div
+                                                                        class="container-fluid pl-3 pr-5">
+                                                                        <hr class="land-separator"></hr>
+                                                                    </div>
+                                                                </div>
+    
+    
+                                                            </t>
+                                                        </div>
+    
+                                                    </t>
                                                     <div id="crop-hidden-template"
                                                         style="display: none;">
                                                         <div class="crop-section-wrapper"
                                                             id="crop-section-repeat" t-att-data-index="{9999}">
                                                             <div class="container-fluid px-5">
-
+    
                                                                 <div class="row pt-3 pb-1">
                                                                     <div
                                                                         class="row col-11 land_container2">
-
+    
                                                                         <div class="col-5">
                                                                             <label
                                                                                 class="s_website_form_label">
@@ -1534,9 +1869,9 @@
                                                                                     </option>
                                                                                 </t>
                                                                             </select>
-
+    
                                                                         </div>
-
+    
                                                                         <div class="col-3">
                                                                             <label
                                                                                 class="s_website_form_label">
@@ -1567,7 +1902,7 @@
                                                                                 </t>
                                                                             </select>
                                                                         </div>
-
+    
                                                                         <div class="col-4">
                                                                             <label
                                                                                 class="s_website_form_label">
@@ -1584,12 +1919,12 @@
                                                                             t-att-name="'crop_illness_types_' + str({9999}) + '[]'">
 
                                                                             </div>
-
+                                                            
                                                                         </div>
-
-
+    
+    
                                                                     </div>
-
+    
                                                                     <div class="col-1 my-3">
                                                                         <button type="button"
                                                                             class="btn btn-outline-secondary btn-sm my-3 "
@@ -1599,8 +1934,8 @@
                                                                         </button>
                                                                     </div>
                                                                 </div>
-
-
+    
+    
                                                             </div>
                                                             <div
                                                                 class="container-fluid pl-3 pr-5">
@@ -1661,7 +1996,8 @@
                                                                 <t t-foreach="water_source"
                                                                     t-as="option">
                                                                     <option
-                                                                        t-att-value="option.id">
+                                                                        t-att-value="option.id"
+                                                                        t-att-selected="'selected' if option.id in (beneficiary.livestock_water_sources.ids or []) else None">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
@@ -1674,157 +2010,319 @@
 
                                                 </div>
                                                 <div id="section-content-livestock">
-                                                    <div id="livestock-section-content">
-                                                        <div class="container-fluid pl-3 pr-5">
-                                                            <hr class="land-separator"></hr>
-                                                        </div>
-                                                        <div class="livestock-section-wrapper"
-                                                            id="livestock-section-repeat" data-index="0">
-                                                            <div class="container-fluid px-5">
-
-                                                                <div class="row pt-3 pb-1">
-                                                                    <div
-                                                                        class="row col-11 land_container2">
-
-                                                                        <div class="col-3">
-                                                                            <label
-                                                                                class="s_website_form_label">
-                                                                                <span
-                                                                                    class="s_website_form_label_content"
-                                                                                    style="color: #666666;">What
-                                                                                    kind of animals
-                                                                                    do you own?
-                                                                                </span>
-                                                                                <span
-                                                                                    class="s_website_form_mark">
-                                                                                    *</span>
-                                                                            </label>
-                                                                            <select
-                                                                                id="livestock_selection"
-                                                                                class="form-select"
-                                                                                name="livestock_types_0"
-                                                                                required="required"
-                                                                            >
-                                                                                <option value=" ">
-                                                                                    Select</option>
-                                                                                <t
-                                                                                    t-foreach="livestock_types"
-                                                                                    t-as="option">
-                                                                                    <option
-                                                                                        t-att-value="option.id"
-                                                                                    >
-                                                                                        <t
-                                                                                            t-esc="option.name" />
-                                                                                    </option>
-                                                                                </t>
-                                                                            </select>
-
-                                                                        </div>
-
-                                                                        <div class="col-3">
-                                                                            <label
-                                                                                class="s_website_form_label">
-                                                                                <span
-                                                                                    class="s_website_form_label_content"
-                                                                                    style="color: #666666;">
-                                                                                    How many animals
-                                                                                    do you own?
-                                                                                </span>
-                                                                                <span
-                                                                                    class="s_website_form_mark">
-                                                                                    *</span>
-                                                                            </label>
-                                                                            <input type="text"
-                                                                                id="number_of_livestock"
-                                                                                name="number_of_livestock_0"
-                                                                                class="form-control"
-                                                                                required="required"
-                                                                            />
-                                                                        </div>
-
-                                                                        <div class="col-3">
-                                                                            <label
-                                                                                class="s_website_form_label">
-                                                                                <span
-                                                                                    class="s_website_form_label_content"
-                                                                                    style="color: #666666;">Is
-                                                                                    the animal
-                                                                                    diseased?</span>
-                                                                                <span
-                                                                                    class="s_website_form_mark">
-                                                                                    *</span>
-                                                                            </label>
-                                                                            <select
-                                                                                id="livestock-is-diseased-selection"
-                                                                                class="form-select"
-                                                                                name="livestock_is_diseased_0"
-                                                                                required="required"
-                                                                            >
-                                                                                <option value=" ">
-                                                                                    Select</option>
-                                                                                <t
-                                                                                    t-foreach="livestock_is_diseased_selections"
-                                                                                    t-as="option">
-                                                                                    <option
-                                                                                        t-att-value="option.id"
-                                                                                    >
-                                                                                        <t
-                                                                                            t-esc="option.name" />
-                                                                                    </option>
-                                                                                </t>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div class="col-3">
-                                                                            <label
-                                                                                class="s_website_form_label">
-                                                                                <span
-                                                                                    class="s_website_form_label_content"
-                                                                                    style="color: #666666;">Diseases
-                                                                                    affecting the
-                                                                                    animal</span>
-                                                                                <span
-                                                                                    class="s_website_form_mark">
-                                                                                    *</span>
-                                                                            </label>
-                                                                            <div id="livestock_illness_types_0"
-                                                                                name="livestock_illness_types_0[]">
-                                                                            </div>
-
-                                                                        </div>
-
-
-                                                                    </div>
-
-                                                                    <div class="col-1 my-3">
-                                                                        <button type="button"
-                                                                            class="btn btn-outline-secondary btn-sm my-3 "
-                                                                            onclick="deleteLivestock(this)">
-                                                                            <i
-                                                                                class="fas fa-trash-alt"></i>
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-
-
-                                                            </div>
-                                                            <div
-                                                                class="container-fluid pl-3 pr-5">
+                                                    <t t-if="not livestock_info_data">
+                                                        <div id="livestock-section-content">
+                                                            <div class="container-fluid pl-3 pr-5">
                                                                 <hr class="land-separator"></hr>
                                                             </div>
+                                                            <div class="livestock-section-wrapper"
+                                                                id="livestock-section-repeat" data-index="0">
+                                                                <div class="container-fluid px-5">
+    
+                                                                    <div class="row pt-3 pb-1">
+                                                                        <div
+                                                                            class="row col-11 land_container2">
+    
+                                                                            <div class="col-3">
+                                                                                <label
+                                                                                    class="s_website_form_label">
+                                                                                    <span
+                                                                                        class="s_website_form_label_content"
+                                                                                        style="color: #666666;">What
+                                                                                        kind of animals
+                                                                                        do you own?
+                                                                                    </span>
+                                                                                    <span
+                                                                                        class="s_website_form_mark">
+                                                                                        *</span>
+                                                                                </label>
+                                                                                <select
+                                                                                    id="livestock_selection"
+                                                                                    class="form-select"
+                                                                                    name="livestock_types_0"
+                                                                                    required="required"
+                                                                                >
+                                                                                    <option value=" ">
+                                                                                        Select</option>
+                                                                                    <t
+                                                                                        t-foreach="livestock_types"
+                                                                                        t-as="option">
+                                                                                        <option
+                                                                                            t-att-value="option.id"
+                                                                                        >
+                                                                                            <t
+                                                                                                t-esc="option.name" />
+                                                                                        </option>
+                                                                                    </t>
+                                                                                </select>
+    
+                                                                            </div>
+    
+                                                                            <div class="col-3">
+                                                                                <label
+                                                                                    class="s_website_form_label">
+                                                                                    <span
+                                                                                        class="s_website_form_label_content"
+                                                                                        style="color: #666666;">
+                                                                                        How many animals
+                                                                                        do you own?
+                                                                                    </span>
+                                                                                    <span
+                                                                                        class="s_website_form_mark">
+                                                                                        *</span>
+                                                                                </label>
+                                                                                <input type="text"
+                                                                                    id="number_of_livestock"
+                                                                                    name="number_of_livestock_0"
+                                                                                    class="form-control"
+                                                                                    required="required"
+                                                                                />
+                                                                            </div>
+    
+                                                                            <div class="col-3">
+                                                                                <label
+                                                                                    class="s_website_form_label">
+                                                                                    <span
+                                                                                        class="s_website_form_label_content"
+                                                                                        style="color: #666666;">Is
+                                                                                        the animal
+                                                                                        diseased?</span>
+                                                                                    <span
+                                                                                        class="s_website_form_mark">
+                                                                                        *</span>
+                                                                                </label>
+                                                                                <select
+                                                                                    id="livestock-is-diseased-selection"
+                                                                                    class="form-select"
+                                                                                    name="livestock_is_diseased_0"
+                                                                                    required="required"
+                                                                                >
+                                                                                    <option value=" ">
+                                                                                        Select</option>
+                                                                                    <t
+                                                                                        t-foreach="livestock_is_diseased_selections"
+                                                                                        t-as="option">
+                                                                                        <option
+                                                                                            t-att-value="option.id"
+                                                                                        >
+                                                                                            <t
+                                                                                                t-esc="option.name" />
+                                                                                        </option>
+                                                                                    </t>
+                                                                                </select>
+                                                                            </div>
+    
+                                                                            <div class="col-3">
+                                                                                <label
+                                                                                    class="s_website_form_label">
+                                                                                    <span
+                                                                                        class="s_website_form_label_content"
+                                                                                        style="color: #666666;">Diseases
+                                                                                        affecting the
+                                                                                        animal</span>
+                                                                                    <span
+                                                                                        class="s_website_form_mark">
+                                                                                        *</span>
+                                                                                </label>
+                                                                                <div id="livestock_illness_types_0"
+                                                                                    name="livestock_illness_types_0[]">
+                                                                                </div>
+                                                                                
+                                                                            </div>
+    
+    
+                                                                        </div>
+    
+                                                                        <div class="col-1 my-3">
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-secondary btn-sm my-3 "
+                                                                                onclick="deleteLivestock(this)">
+                                                                                <i
+                                                                                    class="fas fa-trash-alt"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+    
+    
+                                                                </div>
+                                                                <div
+                                                                    class="container-fluid pl-3 pr-5">
+                                                                    <hr class="land-separator"></hr>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
+    
+                                                    </t>
+    
+                                                    <t t-else="">
+                                                        <div id="livestock-section-content">
+                                                            <div class="container-fluid pl-3 pr-5">
+                                                                <hr class="land-separator"></hr>
+                                                            </div>
+                                                            <t t-foreach="livestock_info_data"
+                                                                t-as="livestock_info" t-esc-options='{"t-key": "index"}'>
+    
+                                                                <div class="livestock-section-wrapper"
+                                                                    id="livestock-section-repeat" t-att-data-index="livestock_info['index']">
+                                                                    <div class="container-fluid px-5">
+    
+                                                                        <div class="row pt-3 pb-1">
+                                                                            <div
+                                                                                class="row col-11 land_container2">
+    
+                                                                                <div class="col-3">
+                                                                                    <label
+                                                                                        class="s_website_form_label">
+                                                                                        <span
+                                                                                            class="s_website_form_label_content"
+                                                                                            style="color: #666666;">What
+                                                                                            kind of
+                                                                                            animals do
+                                                                                            you own?
+                                                                                        </span>
+                                                                                        <span
+                                                                                            class="s_website_form_mark">
+                                                                                            *</span>
+                                                                                    </label>
+                                                                                    <select
+                                                                                        id="livestock_selection"
+                                                                                        class="form-select"
+                                                                                        t-att-name="'livestock_types_' + str(livestock_info['index'])"
+                                                                                        required="required"
+                                                                                    >
+                                                                                        <option
+                                                                                            value=" ">
+                                                                                            Select</option>
+                                                                                        <t
+                                                                                            t-foreach="livestock_types"
+                                                                                            t-as="option">
+                                                                                            <option
+                                                                                                t-att-value="option.id"
+                                                                                                t-att-selected="option.id == livestock_info['livestock_type'].id"
+                                                                                            >
+                                                                                                <t
+                                                                                                    t-esc="option.name" />
+                                                                                            </option>
+                                                                                        </t>
+                                                                                    </select>
+    
+                                                                                </div>
+    
+                                                                                <div class="col-3">
+                                                                                    <label
+                                                                                        class="s_website_form_label">
+                                                                                        <span
+                                                                                            class="s_website_form_label_content"
+                                                                                            style="color: #666666;">
+                                                                                            How many
+                                                                                            animals do
+                                                                                            you own?
+                                                                                        </span>
+                                                                                        <span
+                                                                                            class="s_website_form_mark">
+                                                                                            *</span>
+                                                                                    </label>
+                                                                                    <input type="text"
+                                                                                        id="number_of_livestock"
+                                                                                        t-att-name="'number_of_livestock_' + str(livestock_info['index'])"
+                                                                                        class="form-control"
+                                                                                        required="required"
+                                                                                        t-att-value="livestock_info['number_of_livestock']"
+                                                                                    />
+                                                                                </div>
+    
+                                                                                <div class="col-3">
+                                                                                    <label
+                                                                                        class="s_website_form_label">
+                                                                                        <span
+                                                                                            class="s_website_form_label_content"
+                                                                                            style="color: #666666;">Is
+                                                                                            there a
+                                                                                            diseased
+                                                                                            animal?</span>
+                                                                                        <span
+                                                                                            class="s_website_form_mark">
+                                                                                            *</span>
+                                                                                    </label>
+                                                                                    <select
+                                                                                        id="livestock-is-diseased-selection"
+                                                                                        class="form-select"
+                                                                                        t-att-name="'livestock_is_diseased_' + str(livestock_info['index'])"
+                                                                                        required="required"
+                                                                                    >
+                                                                                        <option
+                                                                                            value=" ">
+                                                                                            Select</option>
+                                                                                        <t
+                                                                                            t-foreach="livestock_is_diseased_selections"
+                                                                                            t-as="option">
+                                                                                            <option
+                                                                                                t-att-value="option.id"
+                                                                                                t-att-selected="option.id == livestock_info['livestock_is_diseased_selection_id']"
+                                                                                            >
+                                                                                                <t
+                                                                                                    t-esc="option.name" />
+                                                                                            </option>
+                                                                                        </t>
+                                                                                    </select>
+                                                                                </div>
+    
+                                                                                <div class="col-3">
+                                                                                    <label
+                                                                                        class="s_website_form_label">
+                                                                                        <span
+                                                                                            class="s_website_form_label_content"
+                                                                                            style="color: #666666;">Diseases
+                                                                                            affecting
+                                                                                            the
+                                                                                            animal</span>
+                                                                                        <span
+                                                                                            class="s_website_form_mark">
+                                                                                            *</span>
+                                                                                    </label>
+                                                                                    <div t-att-id="'livestock_illness_types_' + str(livestock_info['index'])" t-att-name="'livestock_illness_types_' + str(livestock_info['index']) + '[]'" >
+
+                                                                                    </div>
+                                                                                    
+                                                                                </div>
+    
+    
+                                                                            </div>
+    
+                                                                            <div class="col-1 my-3">
+                                                                                <button type="button"
+                                                                                    class="btn btn-outline-secondary btn-sm my-3 "
+                                                                                    onclick="deleteLivestock(this)">
+                                                                                    <i
+                                                                                        class="fas fa-trash-alt"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+    
+    
+                                                                    </div>
+                                                                    <div
+                                                                        class="container-fluid pl-3 pr-5">
+                                                                        <hr class="land-separator"></hr>
+                                                                    </div>
+                                                                </div>
+    
+    
+                                                            </t>
+                                                        </div>
+    
+                                                    </t>
 
                                                     <div id="livestock-hidden-template" style="display: none;">
                                                         <div id="livestock-section-content">
                                                             <div class="livestock-section-wrapper"
                                                                 id="livestock-section-repeat" t-att-data-index="{9999}">
                                                                 <div class="container-fluid px-5">
-
+    
                                                                     <div class="row pt-3 pb-1">
                                                                         <div
                                                                             class="row col-11 land_container2">
-
+    
                                                                             <div class="col-3">
                                                                                 <label
                                                                                     class="s_website_form_label">
@@ -1857,9 +2355,9 @@
                                                                                         </option>
                                                                                     </t>
                                                                                 </select>
-
+    
                                                                             </div>
-
+    
                                                                             <div class="col-3">
                                                                                 <label
                                                                                     class="s_website_form_label">
@@ -1880,7 +2378,7 @@
                                                                                     required="required"
                                                                                 />
                                                                             </div>
-
+    
                                                                             <div class="col-3">
                                                                                 <label
                                                                                     class="s_website_form_label">
@@ -1913,7 +2411,7 @@
                                                                                     </t>
                                                                                 </select>
                                                                             </div>
-
+    
                                                                             <div class="col-3">
                                                                                 <label
                                                                                     class="s_website_form_label">
@@ -1929,12 +2427,12 @@
                                                                                 <div t-att-id="'livestock_illness_types_' + str({9999})"
                                                                                     t-att-name="'livestock_illness_types_' + str({9999}) + '[]'">
                                                                                 </div>
-
+                                                                                
                                                                             </div>
-
-
+    
+    
                                                                         </div>
-
+    
                                                                         <div class="col-1 my-3">
                                                                             <button type="button"
                                                                                 class="btn btn-outline-secondary btn-sm my-3 "
@@ -1944,8 +2442,8 @@
                                                                             </button>
                                                                         </div>
                                                                     </div>
-
-
+    
+    
                                                                 </div>
                                                                 <div
                                                                     class="container-fluid pl-3 pr-5">
@@ -1978,7 +2476,6 @@
                                                  <span>&#x276F;</span></button>
                                             </div>
                                         </div>
-
                                         <div id="agricultural-input" class="section-container"
                                             style="display: none;">
 
@@ -1999,6 +2496,7 @@
                                                                 name="amount_fertilizer_utilized"
                                                                 class="form-control"
                                                                 required="required"
+                                                                t-att-value="beneficiary.amount_fertilizer_utilized" 
                                                                 placeholder="Enter the amount of fertiliser"/>
                                                         </div>
                                                     </div>
@@ -2017,6 +2515,7 @@
                                                                 name="amount_pesticide_utilized"
                                                                 class="form-control"
                                                                 required="required"
+                                                                t-att-value="beneficiary.amount_pesticide_utilized"
                                                                 placeholder="Enter the amount of pesticide" />
                                                         </div>
                                                     </div>
@@ -2038,6 +2537,7 @@
                                                                 name="amount_insecticide_utilized"
                                                                 class="form-control"
                                                                 required="required"
+                                                                t-att-value="beneficiary.amount_insecticide_utilized"
                                                                 placeholder="Enter the amount of insecticide" />
                                                         </div>
                                                     </div>
@@ -2057,6 +2557,7 @@
                                                                 name="amount_improved_seed_utilized"
                                                                 class="form-control"
                                                                 required="required"
+                                                                t-att-value="beneficiary.amount_improved_seed_utilized"
                                                                 placeholder="Enter the amount of improved seed" />
 
                                                         </div>
@@ -2078,7 +2579,7 @@
 
                                         </div>
 
-                                        <div id="access-to-resource" class="section-container"
+                                       <div id="access-to-resource" class="section-container"
                                             style="display: none;">
                                             <div class="section-content">
                                                 <div class="row">
@@ -2100,7 +2601,8 @@
                                                                 <option value=" ">Select</option>
                                                                 <t t-foreach="access_to_machinery"
                                                                     t-as="option">
-                                                                    <option t-att-value="option.id">
+                                                                    <option t-att-value="option.id"
+                                                                        t-att-selected="option.id == access_to_machinery_selection_id">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
@@ -2135,6 +2637,7 @@
                                                                     t-as="option">
                                                                     <option
                                                                         t-att-value="option.id"
+                                                                        t-att-selected="'selected' if option.id in (beneficiary.type_of_machinery.ids or []) else None"
                                                                     >
                                                                         <t
                                                                             t-esc="option.name" />
@@ -2180,7 +2683,8 @@
                                                                 <option value=" ">Select</option>
                                                                 <t t-foreach="has_finance_access"
                                                                     t-as="option">
-                                                                    <option t-att-value="option.id">
+                                                                    <option t-att-value="option.id"
+                                                                        t-att-selected="option.id == access_to_finance_selection_id">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
@@ -2213,6 +2717,7 @@
                                                                     t-as="option">
                                                                     <option
                                                                         t-att-value="option.id"
+                                                                        t-att-selected="'selected' if option.id in (beneficiary.finance_accesses.ids or []) else None"
                                                                     >
                                                                         <t
                                                                             t-esc="option.name" />
@@ -2253,7 +2758,8 @@
                                                                 <option value=" ">Select</option>
                                                                 <t t-foreach="marital_status"
                                                                     t-as="option">
-                                                                    <option t-att-value="option.id">
+                                                                    <option t-att-value="option.id"
+                                                                        t-att-selected="option.id == marital_status_selection_id">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
@@ -2277,7 +2783,8 @@
                                                                 <option value=" ">Select</option>
                                                                 <t t-foreach="education_level"
                                                                     t-as="option">
-                                                                    <option t-att-value="option.id">
+                                                                    <option t-att-value="option.id"
+                                                                        t-att-selected="option.id == education_level_selection_id">
                                                                         <t t-esc="option.name" />
                                                                     </option>
                                                                 </t>
@@ -2311,6 +2818,7 @@
                                                                     t-as="option">
                                                                     <option
                                                                         t-att-value="option.id"
+                                                                        t-att-selected="'selected' if option.id in (beneficiary.hh_income_type.ids or []) else None"
                                                                     >
                                                                         <t
                                                                             t-esc="option.name" />
@@ -2337,13 +2845,13 @@
                                             <button
                                                 id="beneficiary_submit"
                                                 type="button"
-                                                onclick="customvalidateForm(true);"
+                                                onclick="customvalidateForm(false);"
                                                 class="btn btn-primary"
                                                 style="width: 90px;"
                                             >
                                                 SAVE
                                             </button>
-
+                                            
                                             </div>
 
 
@@ -2352,9 +2860,8 @@
                                     </main>
                                 </div>
                             </div>
-
                         </div>
-
+    
                         <!-- Pass data to JavaScript -->
                         <t t-set="crop_illness_type_js" t-value="json.dumps([{'label': it.name, 'value': it.id} for it in crop_illness_type])"/>
                         <t t-set="livestock_illness_type_js" t-value="json.dumps([{'label': lit.name, 'value': lit.id} for lit in livestock_illness_type])"/>
@@ -2393,16 +2900,16 @@
 
                         <script
                             src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
-
-
+                        
+                        
                             <script
                                 src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
                         <script
                             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.14/js/bootstrap-select.min.js"></script>
                         <script
                             src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
-
+                        
+                        
                         <script
                             type="text/javascript"
                             src="/g2p_ati_service_provider_portal/static/src/js/member_form.js"
@@ -2420,24 +2927,24 @@
                             src="/g2p_ati_service_provider_portal/static/src/js/add_informations.js"
                         />
 
-
+                        
 
                         <script>
-
                             function updateFileName(input) {
+                                var fileName = input.files[0].name;
+                                var label = input.previousElementSibling.querySelector('.upload-text');
+                                label.textContent = fileName;
+                            }
+                        </script>
 
-                            var inputId = input.getAttribute('id');
-
-                            var label = document.querySelector(`label[for="${inputId}"]`);
-                            var uploadText = label.querySelector('.upload-text');
-
-
-                            var fileName = input.files.length > 0 ? input.files[0].name : 'Upload';
-
-
+                        <script>
+                            document.getElementById('land_certificate').addEventListener('change',
+                            function() {
+                            var fileName = this.files[0].name;
+                            var uploadText = document.querySelector('.custom-file-upload
+                            .upload-text');
                             uploadText.textContent = fileName;
-    }
-
+                            });
                         </script>
 
                         <!-- <script>

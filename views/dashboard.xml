@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+      <template
+        id="ati_dashboard_template"
+        inherit_id="g2p_service_provider_portal_base.home_page"
+        customize_show="True"
+        name="ATI Dashboard"
+        priority="200"
+        >
+          <xpath expr="//div[hasclass('container-adjuster')]" position="replace">
+              <div
+                class="container-adjuster"
+                style="display: flex; justify-content: center; align-items: center;">
+                  <div style="margin-top: -38%;margin-right: -8%;">
+                      <h5 class="all-title" style="height:13px;font-size:13px;margin-left: 100%">Dashboard</h5>
+                      <a href="/serviceprovider/home" style="font-size:9px;margin-left: 100%; color: #09A261;">
+                            Dashboard
+                      </a>
+                  </div>
+			<div class="card-container" style="height:380px;justify-content: space-evenly; margin-top: 2%;margin-bottom:100px">
+                <div
+                        class="card-container-mini"
+                        style="border-radius: 20px; margin-top:2%; margin-left: -6%; width: 80%;height:125%;"
+                    >
+                <a href="/serviceprovider/individual">
+					<div class="card" style="height: 65%; width: 50%;">
+						<h5 class="card-heading" style="margin-left: 8%; margin-top: 40px;">Individual</h5>
+                            <img
+                                    src="/g2p_ati_service_provider_portal/static/src/img/dashboard.png"
+                                    class="img"
+                                    style="width: 50px; height: 50px; margin-top: 8%; margin-left: 40%; margin-bottom: 3%;"
+                                />
+                            <center><strong style="font-size:13px;color: #09A261; margin-top: 5%;">
+                                        <t t-out="len(individuals)" />
+                                &amp;nbsp;Individuals
+                            </strong></center>
+                        <div
+                                    style="display: flex; justify-content: center; align-items: center; padding-left: 5%; padding-right: 5%;"
+                                >
+                            <p
+                                        style="font-size:9px;text-align: center; display: -webkit-box; -webkit-box-orient: vertical;overflow: hidden;"
+                                    >
+                                More than
+                                <t t-out="len(individuals)"/>
+                                &amp;nbsp;individuals account created, create new account.</p>
+                        </div>
+                        <hr style="width: 70%; margin-left: 15%; margin-top: 7%;" />
+						<div class="card-foot">
+							<a
+                                        href="/serviceprovider/individual"
+                                        class="justify-content-center viewprograms group"
+                                        style="color: #09A261;font-size:13px;"
+                                    >View More
+                                <img
+                                            src="/g2p_ati_service_provider_portal/static/src/img/arrow.jpeg"
+                                            class="img"
+                                            style="width: 15px; height: 15px;"
+                                        />
+                            </a>
+						</div>
+					</div>
+                </a>
+
+                </div>
+
+                <div
+                        class="card-container-mini"
+                        style="border-radius: 20px; margin-top:2%; margin-left: -6%; width: 80%;height:125%;"
+                    >
+                <a href="/serviceprovider/group">
+					<div class="card" style="height: 65%; width: 50%;">
+						<h5 class="card-heading" style="margin-left: 8%; margin-top: 40px;">Households</h5>
+                            <img
+                                    src="/g2p_ati_service_provider_portal/static/src/img/dashboard.png"
+                                    class="img"
+                                    style="width: 50px; height: 50px; margin-top: 8%; margin-left: 40%; margin-bottom: 3%;"
+                                />
+                            <center><strong style="font-size:13px;color: #09A261; margin-top: 5%;">
+                                        <t t-out="len(households)" />
+                                &amp;nbsp;Households
+                            </strong></center>
+                        <div
+                                    style="display: flex; justify-content: center; align-items: center; padding-left: 5%; padding-right: 5%;"
+                                >
+                            <p
+                                        style="font-size:9px;text-align: center; display: -webkit-box; -webkit-box-orient: vertical;overflow: hidden;"
+                                    >
+                                More than
+                                <t t-out="len(households)"/>
+                                &amp;nbsp;Household account created, create new account.</p>
+                        </div>
+                        <hr style="width: 70%; margin-left: 15%; margin-top: 7%;" />
+						<div class="card-foot">
+							<a
+                                        href="/serviceprovider/individual"
+                                        class="justify-content-center viewprograms group"
+                                        style="color: #09A261;font-size:13px;"
+                                    >View More
+                                <img
+                                            src="/g2p_ati_service_provider_portal/static/src/img/arrow.jpeg"
+                                            class="img"
+                                            style="width: 15px; height: 15px;"
+                                        />
+                            </a>
+						</div>
+					</div>
+                </a>
+
+                </div>
+
+			</div>
+
+              </div>
+            <link rel="stylesheet" href="/g2p_ati_service_provider_portal/static/src/css/style.css" />
+		</xpath>
+
+
+      </template>
+</odoo>

@@ -1,13 +1,146 @@
 $(document).ready(function () {
+    $('.selectpicker').selectpicker();
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, "0");
     const day = String(today.getDate()).padStart(2, "0");
-
     const formattedDate = `${year}-${month}-${day}`;
 
-    // Set the value of the date input
-//    document.getElementById("date_consent").value = formattedDate;
+    console.log(cropIllnessType);
+    console.log(livestockInfoData); 
+
+    // Determine starting index based on existing crop_info_data
+    var cropMaxIndex = 0;
+    $('.crop-section-wrapper').each(function() {
+        var cropIndex = parseInt($(this).attr('data-index'));
+        if (!isNaN(cropIndex)) {
+            cropMaxIndex = Math.max(cropMaxIndex, cropIndex);
+        }
+    });
+    var cropIndex = cropMaxIndex + 1;
+
+    var livestockMaxIndex = 0;
+    $('.livestock-section-wrapper').each(function() {
+        var livestockIndex = parseInt($(this).attr('data-index'));
+        if (!isNaN(livestockIndex)) {
+            livestockMaxIndex = Math.max(livestockMaxIndex, livestockIndex);
+        }
+    });
+    var livestockIndex = livestockMaxIndex + 1;
+
+    var landMaxIndex = 0;
+    $('.land-section-wrapper').each(function() {
+        var landIndex = parseInt($(this).attr('data-index'));
+        if (!isNaN(landIndex)) {
+            landMaxIndex = Math.max(landMaxIndex, landIndex);
+        }
+    });
+    var landIndex = landMaxIndex + 1;
+
+    if (cropInfoData && cropInfoData.length > 0) {
+        cropInfoData.forEach(function(cropInfo) {
+            VirtualSelect.init({
+                ele: `#crop_illness_types_${cropInfo['index']}`,
+                options: cropIllnessType,
+                search: true,
+                multiple: true,
+                selectedValue: cropInfo.illness_type,
+            });
+        });
+    }
+    else {
+        VirtualSelect.init({
+            ele: `#crop_illness_types_0`,
+            options: cropIllnessType,
+            search: true,
+            multiple: true,
+        });
+    }
+
+    if (livestockInfoData && livestockInfoData.length > 0) {
+        livestockInfoData.forEach(function(livestockInfo) {
+            VirtualSelect.init({
+                ele: `#livestock_illness_types_${livestockInfo['index']}`,
+                options: livestockIllnessType,
+                search: true,
+                multiple: true,
+                selectedValue: livestockInfo.illness_type,
+            });
+        });
+    }
+    else {
+        VirtualSelect.init({
+            ele: `#livestock_illness_types_0`,
+            options: livestockIllnessType,
+            search: true,
+            multiple: true,
+        });
+    }
+
+    $('#add-crop-info').click(function() {
+        var $template = $('#crop-hidden-template').html();
+        var $formContainer = $('#section-content-crop');
+
+        // Use jQuery to replace {cropIndex} placeholder in the template
+        var newLineHtml = $template.replace(/\{9999\}/g, cropIndex);
+        var $newLine = $(newLineHtml);
+        $formContainer.append($newLine);
+
+        var newSelectIdIllness = `crop_illness_types_${cropIndex}`;
+            VirtualSelect.init({
+                ele: `#${newSelectIdIllness}`,
+                options: cropIllnessType,
+                search: true,
+                multiple: true,
+            });
+        cropIndex++; // Increment index for next line
+    });
+
+    $('#add-livestock-info').click(function() {
+        var $template = $('#livestock-hidden-template').html();
+        var $formContainer = $('#section-content-livestock');
+
+        // Use jQuery to replace {cropIndex} placeholder in the template
+        var newLineHtml = $template.replace(/\{9999\}/g, livestockIndex);
+        console.log(newLineHtml);
+        var $newLine = $(newLineHtml);
+        $formContainer.append($newLine);
+
+        var newSelectIdIllness = `livestock_illness_types_${livestockIndex}`;
+            VirtualSelect.init({
+                ele: `#${newSelectIdIllness}`,
+                options: livestockIllnessType,
+                search: true,
+                multiple: true,
+            });
+        livestockIndex++; // Increment index for next line
+    });
+
+    $('#add-land-info').click(function() {
+        var $template = $('#land-hidden-template').html();
+        var $formContainer = $('#section-content-land');
+
+        // Use jQuery to replace {cropIndex} placeholder in the template
+        var newLineHtml = $template.replace(/\{9999\}/g, landIndex);
+        console.log(newLineHtml);
+        var $newLine = $(newLineHtml);
+        $formContainer.append($newLine);
+
+        landIndex++; // Increment index for next line
+    });
+
+    $('#add-family-info').click(function() {
+        var $template = $('#hiden-family-template').html();
+        var $formContainer = $('#section-content-family');
+
+        // Use jQuery to replace {cropIndex} placeholder in the template
+        var newLineHtml = $template.replace(/\{9999\}/g, landIndex);
+        console.log(newLineHtml);
+        var $newLine = $(newLineHtml);
+        $formContainer.append($newLine);
+
+        landIndex++; // Increment index for next line
+    });
 
     // Function to toggle display and required attribute of a field
     function toggleField(selectElementId, fieldId, inputId, yesText = "yes") {
@@ -26,51 +159,6 @@ $(document).ready(function () {
             input.removeAttribute("required");
         }
     }
-    // If condition match hide section
-    function selectChangeHideSection(selectElementId, fieldId, otherText = "no income") {
-        const selectElement = document.getElementById(selectElementId);
-        const field = document.getElementById(fieldId);
-        const selectedOptionText = selectElement.options[selectElement.selectedIndex].text
-            .trim()
-            .toLowerCase();
-
-        if (selectedOptionText === otherText.toLowerCase()) {
-            field.style.display = "none";
-        } else {
-            field.style.display = "block";
-        }
-    }
-    // If condition match hide section
-    function selectChangeShowSection(
-        selectElementId,
-        fieldId,
-        otherText = "other",
-        fieldId1,
-        otherText1 = "no"
-    ) {
-        const selectElement = document.getElementById(selectElementId);
-        const fieldSelectId = document.getElementById(fieldId);
-        const selectotherText = document.getElementById(otherText);
-        const field1 = document.getElementById(fieldId1);
-        var selectedOptionText = "";
-        var selectedotherText = "";
-        if (selectElement !== null) {
-            selectedOptionText = selectElement.options[selectElement.selectedIndex].text.trim().toLowerCase();
-        }
-
-        if (selectotherText !== null) {
-            selectedotherText = selectotherText.options[fieldSelectId.selectedIndex].text
-                .trim()
-                .toLowerCase();
-        }
-        if (selectedOptionText !== otherText1.toLowerCase() && selectedotherText !== otherText) {
-            field1.style.display = "none";
-        } else if (selectedOptionText == otherText1.toLowerCase()) {
-            field1.style.display = "none";
-        } else {
-            field1.style.display = "block";
-        }
-    }
 
     // Function to handle changes in a select element
     function handleSelectChange(selectElementId, fieldId, inputId, otherText = "other") {
@@ -87,59 +175,6 @@ $(document).ready(function () {
             field.style.display = "none";
             input.removeAttribute("required");
         }
-    }
-
-    // Function to handle changes in a group of checkboxes
-    function handleCheckboxChange(checkboxClass, fieldId, inputId, otherText = "other") {
-        const checkboxes = document.querySelectorAll(checkboxClass);
-        const field = document.getElementById(fieldId);
-        const input = document.getElementById(inputId);
-        let isChecked = false;
-
-        checkboxes.forEach((checkbox) => {
-            if (checkbox.checked) {
-                const label = checkbox.closest("label").textContent.trim().toLowerCase();
-                if (label === otherText.toLowerCase()) {
-                    isChecked = true;
-                }
-            }
-        });
-
-        if (isChecked) {
-            field.style.display = "block";
-            input.setAttribute("required", "required");
-        } else {
-            field.style.display = "none";
-            input.removeAttribute("required");
-        }
-    }
-
-    // Function to update options for a select element based on an AJAX response
-    function updateOptions(url, data, targetSelectId, defaultOptionText = "Select") {
-        $.ajax({
-            url: url,
-            method: "POST",
-            dataType: "json",
-            data: data,
-            success: function (options) {
-                const selectElement = document.getElementById(targetSelectId);
-                selectElement.innerHTML = "";
-                const defaultOption = document.createElement("option");
-                defaultOption.value = "";
-                defaultOption.textContent = defaultOptionText;
-                selectElement.appendChild(defaultOption);
-
-                options.forEach((option) => {
-                    const opt = document.createElement("option");
-                    opt.value = option.id;
-                    opt.textContent = option.name;
-                    selectElement.appendChild(opt);
-                });
-            },
-            error: function (error) {
-                console.error("Error fetching options:", error);
-            },
-        });
     }
 
     // Event listeners
@@ -171,335 +206,146 @@ $(document).ready(function () {
         }
     }
 
-
-     function handlePhoneNumberSelection() {
-        const selectElement = document.getElementById("have-phone-number-selection");
-        const phoneDiv = document.getElementById("phone-div");
-        const contactDiv = document.getElementById("contact-div");
-        const phoneInput = document.getElementById("primary_phone");
-        const contactInput = document.getElementById("contact_phone");
+    function handlePhoneNumberSelection() {
+        const selectElement = document.getElementById("have-phone-no-selection");
+        const primaryPhoneDiv = document.getElementById("primary-div");
+        const otherPhoneDiv = document.getElementById("other-div");
+        const primaryPhone = document.getElementById("primary_phone");
+        const otherPhone = document.getElementById("other_phone");
         const selectedOptionText = selectElement.options[selectElement.selectedIndex].text
             .trim()
             .toLowerCase();
 
         if (selectedOptionText === "yes") {
-            phoneDiv.style.display = "block";
-            phoneInput.setAttribute("required", "required");
-            contactDiv.style.display = "none";
-            contactInput.removeAttribute("required");
+            primaryPhoneDiv.style.display = "block";
+            primaryPhone.setAttribute("required", "required");
+            otherPhoneDiv.style.display = "none";
+            otherPhone.removeAttribute("required");
         } else if (selectedOptionText === "no") {
-            phoneDiv.style.display = "none";
-            phoneInput.removeAttribute("required");
-            contactDiv.style.display = "block";
-            contactInput.setAttribute("required", "required");
+            primaryPhoneDiv.style.display = "none";
+            primaryPhone.removeAttribute("required");
+            otherPhoneDiv.style.display = "block";
+            otherPhone.setAttribute("required", "required");
         } else {
-            phoneDiv.style.display = "none";
-            phoneInput.removeAttribute("required");
-            contactDiv.style.display = "none";
-            contactInput.removeAttribute("required");
+            primaryPhoneDiv.style.display = "none";
+            primaryPhone.removeAttribute("required");
+            otherPhoneDiv.style.display = "none";
+            otherPhone.removeAttribute("required");
         }
     }
 
     // Event listener for national ID selection change
     $("#have-national-id-selection").on("change", handleNationalIdSelection);
-    $("#have-phone-number-selection").on("change", handlePhoneNumberSelection);
+    // Event listener for phone number selection change
+    $("#have-phone-no-selection").on("change", handlePhoneNumberSelection);
 
-    $("#region_selection").on("change", function () {
-        const regionId = this.value;
-        updateOptions("/update_zone_options", {region_id: regionId}, "zon_selection");
+    $("#access-to-machinery-selection").on("change", function() {
+        toggleField("access-to-machinery-selection", "machinery-field", "machinery-types-select")
     });
 
-    $("#zon_selection").on("change", function () {
-        const zoneId = this.value;
-        updateOptions("/update_woreda_options", {zone_id: zoneId}, "woreda_selection");
-    });
-
-    $("#current_region_selection").on("change", function () {
-        const regionId = this.value;
-        updateOptions("/update_zone_options", {region_id: regionId}, "current_zon_selection");
-    });
-
-    $("#current_zon_selection").on("change", function () {
-        const zoneId = this.value;
-        updateOptions("/update_woreda_options", {zone_id: zoneId}, "current_woreda_selection");
-    });
-
-    $("#religion-select").on("change", function () {
-        handleSelectChange("religion-select", "other-religion-field", "other_religion");
-    });
-
-    $("#marital_status-select").on("change", function () {
-        handleSelectChange("marital_status-select", "other-marital-status-field", "other_marital_status");
-    });
-
-    $("#education-select").on("change", function () {
-        handleSelectChange("education-select", "other-education-field", "other_education");
-    });
-
-    $("#mother-tongue-select").on("change", function () {
-        handleSelectChange("mother-tongue-select", "other-language-field", "other_language");
-    });
-
-    $("#sleep_at_night-select").on("change", function () {
-        handleSelectChange("sleep_at_night-select", "specify-sleep-field", "other_spend_night");
-    });
-
-    $(".homeless_reason-checkbox").on("change", function () {
-        handleCheckboxChange(".homeless_reason-checkbox", "other_homeless-field", "other_homeless_reason");
-    });
-
-    $(".challenges_on_street-checkbox").on("change", function () {
-        handleCheckboxChange(
-            ".challenges_on_street-checkbox",
-            "specify-challenge-field",
-            "specify-challenge"
-        );
-    });
-
-    $("#received_any_assistance").on("change", function () {
-        selectChangeShowSection(
-            "received_any_assistance",
-            "inistitutes-selection",
-            "other",
-            "specify_inistitutes-field",
-            "no"
-        );
-        toggleField(
-            "received_any_assistance",
-            "select-received_any_assistance-field",
-            "specify_inistitutes-field"
-        );
-    });
-
-    $("#inistitutes-selection").on("change", function () {
-        handleSelectChange("inistitutes-selection", "specify_inistitutes-field", "specify_inistitutes");
-    });
-
-    $("#received_any_assistance-current").on("change", function () {
-        selectChangeShowSection(
-            "received_any_assistance-current",
-            "select-received_any_assistance-field-current",
-            "other",
-            "specify_inistitutes-field-current",
-            "no"
-        );
-        toggleField(
-            "received_any_assistance-current",
-            "select-received_any_assistance-field-current",
-            "specify_inistitutes-field-current"
-        );
-    });
-
-    $("#inistitutes-selection-current").on("change", function () {
-        handleSelectChange(
-            "inistitutes-selection-current",
-            "specify_inistitutes-field-current",
-            "specify_inistitutes-current"
-        );
-    });
-
-    $("#are-you-disabled-select").on("change", function () {
-        toggleField("are-you-disabled-select", "other-disability-field", "other_disability");
-    });
-
-    $("#disability-selection").on("change", function () {
-        handleSelectChange("disability-selection", "specify-disability-field", "other_disability");
-    });
-
-    $("#source_income-selection").on("change", function () {
-        selectChangeHideSection("source_income-selection", "pre-earn-per-field", "no income");
-        selectChangeHideSection("source_income-selection", "pre-earn-amount-field", "no income");
-
-        handleSelectChange("source_income-selection", "other-source-income-field", "other_source_income");
-    });
-
-    $("#source_income-selection-current").on("change", function () {
-        selectChangeHideSection("source_income-selection-current", "earn-per-field", "no income");
-        selectChangeHideSection("source_income-selection-current", "earn-amount-field", "no income");
-        handleSelectChange(
-            "source_income-selection-current",
-            "other-source-income-field-current",
-            "other_source_income-current"
-        );
-    });
-
-    $("#additional_support-select").on("change", function () {
-        toggleField(
-            "additional_support-select",
-            "specific_additional_support-field",
-            "other_additional_support"
-        );
-    });
-
-    $(".specific_support_options-checkbox").on("change", function () {
-        handleCheckboxChange(
-            ".specific_support_options-checkbox",
-            "other_additional_support-field",
-            "other_additional_support"
-        );
-    });
-
-    $("#lang").on("change", function () {
-        const field = document.getElementById("other-lang-field");
-        const input = document.getElementById("other_lang");
-        const selectedValues = Array.from(document.getElementById("lang").selectedOptions).map(
-            (option) => option.value
-        );
-        if (selectedValues.includes("16")) {
-            field.style.display = "block";
-            input.setAttribute("required", "required");
-        } else {
-            field.style.display = "none";
-            input.removeAttribute("required");
-        }
+    $("#access-to-finance-selection").on("change", function() {
+        toggleField("access-to-finance-selection", "finance-field", "finance-selection")
     });
 
     // Trigger the change event on page load to handle the initial state
     $("#have-national-id-selection").trigger("change");
-    $("have-phone-number-selection").trigger("change");
-    $("#religion-select").trigger("change");
-    $("#marital_status-select").trigger("change");
-    $("#marital_status-select").trigger("change");
-    $("#education-select").trigger("change");
-    $("#mother-tongue-select").trigger("change");
-    $("#sleep_at_night-select").trigger("change");
-    $("#sleep_at_night-select").trigger("change");
-    $(".homeless_reason-checkbox").trigger("change");
-    $(".challenges_on_street-checkbox").trigger("change");
-    $("#received_any_assistance").trigger("change");
-    $("#inistitutes-selection").trigger("change");
-    $("#received_any_assistance-current").trigger("change");
-    $("#inistitutes-selection").trigger("change");
-    $("#are-you-disabled-select").trigger("change");
-    $("#disability-selection").trigger("change");
-    $("#additional_support-select").trigger("change");
-    $(".specific_support_options-checkbox").trigger("change");
-    $("#source_income-selection-current").trigger("change");
-    $("#source_income-selection").trigger("change");
-    $("#lang").trigger("change");
+    $("#have-phone-no-selection").trigger("change");
+    $("#access-to-machinery-selection").trigger("change");
+    $("#access-to-finance-selection").trigger("change");
 
-    // Validation for vid and email
 
-    const uidInput = document.getElementById("uid_input");
-    const uidError = document.getElementById("uid_error");
-//    const form = document.getElementById("updategroupForm");
-//    const emailInput = document.getElementById("email");
-//    const emailError = document.createElement("div");
-//    emailError.classList.add("invalid-feedback");
-//    emailInput.parentNode.appendChild(emailError);
+//     // Validation for vid and email
 
-    uidInput.addEventListener("input", function () {
-        if (uidInput.value.length !== 12 && uidInput.value.length !== 0) {
-            uidInput.classList.add("uid_error");
-            uidError.style.display = "block";
-        } else {
-            uidInput.classList.remove("is-invalid");
-            uidError.style.display = "none";
-        }
-    });
-//    function isValidEmail(email) {
-//        // Basic email regex pattern
-//        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//        return emailPattern.test(email);
-//    }
-//
-//    emailInput.addEventListener("input", function () {
-//        if (emailInput.value.length !== 0) {
-//            if (!isValidEmail(emailInput.value)) {
-//                emailInput.classList.add("is-invalid");
-//                emailError.style.display = "block";
-//            } else {
-//                emailInput.classList.remove("is-invalid");
-//                emailError.style.display = "none";
-//            }
-//        } else {
-//            emailInput.classList.remove("is-invalid");
-//            emailError.style.display = "none";
-//        }
-//    });
+//     const uidInput = document.getElementById("uid_input");
+//     const uidError = document.getElementById("uid_error");
+//     const form = document.getElementById("updategroupForm");
+//     const emailInput = document.getElementById("email");
+//     const emailError = document.createElement("div");
+//     emailError.classList.add("invalid-feedback");
+//     emailInput.parentNode.appendChild(emailError);
+
+//     uidInput.addEventListener("input", function () {
+//         console.log("hey hey")
+//         if (uidInput.value.length !== 12 && uidInput.value.length !== 0) {
+//             uidInput.classList.add("uid_error");
+//             uidError.style.display = "block";
+//         } else {
+//             uidInput.classList.remove("is-invalid");
+//             uidError.style.display = "none";
+//         }
+//     });
+    function isValidEmail(email) {
+        // Basic email regex pattern
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+//     emailInput.addEventListener("input", function () {
+//         if (emailInput.value.length !== 0) {
+//             if (!isValidEmail(emailInput.value)) {
+//                 emailInput.classList.add("is-invalid");
+//                 emailError.style.display = "block";
+//             } else {
+//                 emailInput.classList.remove("is-invalid");
+//                 emailError.style.display = "none";
+//             }
+//         } else {
+//             emailInput.classList.remove("is-invalid");
+//             emailError.style.display = "none";
+//         }
+//     });
 
     window.customvalidateForm = function (isCreateForm) {
-        if (uidInput.value.length !== 12 && uidInput.value.length !== 0) {
-            event.preventDefault(); // Prevent form submission if validation fails
-            uidInput.classList.add("is-invalid");
-            uidError.style.display = "block";
-            const collapseElement = uidInput.closest(".collapse");
-            if (collapseElement) {
-                const accordionButton = document.querySelector(`[data-bs-target="#${collapseElement.id}"]`);
-                if (accordionButton) {
-                    accordionButton.click();
-                }
-            }
-        } else if (!isValidEmail(emailInput.value) && emailInput.value.length !== 0) {
-            emailInput.classList.add("is-invalid");
-            emailError.style.display = "block";
-            const collapseElement = emailInput.closest(".collapse");
-            if (collapseElement) {
-                const accordionButton = document.querySelector(`[data-bs-target="#${collapseElement.id}"]`);
-                if (accordionButton) {
-                    accordionButton.click();
-                }
-            }
-        } else {
-            uidInput.classList.remove("is-invalid");
-            uidError.style.display = "none";
-            emailInput.classList.remove("is-invalid");
-            emailError.style.display = "none";
-            this.validateForm(isCreateForm);
-        }
+        console.log("Here");
+        this.validateForm(isCreateForm);
+        // if (uidInput.value.length !== 12 && uidInput.value.length !== 0) {
+        //     event.preventDefault(); // Prevent form submission if validation fails
+        //     uidInput.classList.add("is-invalid");
+        //     uidError.style.display = "block";
+        //     const collapseElement = uidInput.closest(".collapse");
+        //     if (collapseElement) {
+        //         const accordionButton = document.querySelector(`[data-bs-target="#${collapseElement.id}"]`);
+        //         if (accordionButton) {
+        //             accordionButton.click();
+        //         }
+        //     }
+        // } else if (!isValidEmail(emailInput.value) && emailInput.value.length !== 0) {
+        //     emailInput.classList.add("is-invalid");
+        //     emailError.style.display = "block";
+        //     const collapseElement = emailInput.closest(".collapse");
+        //     if (collapseElement) {
+        //         const accordionButton = document.querySelector(`[data-bs-target="#${collapseElement.id}"]`);
+        //         if (accordionButton) {
+        //             accordionButton.click();
+        //         }
+        //     }
+        // } else {
+        //     uidInput.classList.remove("is-invalid");
+        //     uidError.style.display = "none";
+        //     emailInput.classList.remove("is-invalid");
+        //     emailError.style.display = "none";
+        //     this.validateForm(isCreateForm);
+        // }
     };
 });
 
 
-function addSection() {
-
-    console.log("adddd")
-        const container = document.getElementById('sections-container');
-        const newSection = document.createElement('div');
-        newSection.className = 'section';
-
-        newSection.innerHTML = `
-             <div class="container" style="height: 249px;">
-                <div id="sections-container">
-
-                <div class="container" style="height: 196px;">
-                    <div class="dashed-line" style="top: 182px;">---------------------------------------------------------------------------------------------------------------------------------------------------------</div>
-                    <div class="field-container" style="left: 1px; top: 26px;">
-                             <label class="label" for="given-name">Given Name:</label>
-                            <input class="input-box" type="text" name="given-name" placeholder="Enter given name" required="True"/>
-                    </div>
-                    <div class="field-container" style="left: 281px; top: 26px;">
-                         <label class="label" for="father-name">Father's Name:</label>
-                            <input class="input-box" type="text" name="father-name" placeholder="Enter Father's Name" required="True"/>
-                    </div>
-                    <div class="field-container" style="left: 561px; top: 26px;">
-                        <label class="label" for="grand-father-name">Grandfather's Name:</label>
-                            <input class="input-box" type="text" name="grand-father-name" placeholder="Enter Grandfather's Name" required="True"/>
-                    </div>
-                    <div class="field-container" style="left: 1px; top: 106px;">
-
-                        <label class="label" for="dob">Date of Birth:</label>
-                        <input class="input-box" type="date" name="dob" placeholder="DD-MM-YYYY" required="True"/>
-                    </div>
-                    <div class="field-container" style="left: 281px; top: 106px;">
-                         <label class="label" for="gender">Gender:</label>
-                          <select  class="input-box" name="gender" required="True">
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                            </select>
-                    </div>
-                </div>
-
-            </div>
-        `;
-
-        container.appendChild(newSection);
+function showSection(sectionId, element) {
+    document.querySelectorAll(".section-container").forEach((section) => {
+        section.style.display = "none";
+    });
+    document.getElementById(sectionId).style.display = "block";
+    document.querySelectorAll(".sidebar .nav-link").forEach((link) => {
+        link.classList.remove("active");
+    });
+    if (element) {
+        element.classList.add("active");
     }
-
-
+}
 
 function showNextSection(nextSectionId, currentSectionId) {
     // val = validateSection(currentSectionId);
+    console.log("this next")
     val = true
 
     if (val) {
@@ -512,20 +358,64 @@ function showNextSection(nextSectionId, currentSectionId) {
         }
     }
 }
-//
-//
-//function navigateToNextSection(currentIndex) {
-//const nextIndex = currentIndex + 1;
-//if (nextIndex < document.querySelectorAll('.content > div
-//
-//
-//    function toggleAccordion() {
-//        var accordionContent = document.getElementById('accordionContent');
-//        accordionContent.classList.toggle('show');
-//    }
-//
-//    document.getElementById('farmerYes').addEventListener('change', function () {
-//        if (this.checked) {
-//            addFarmerAccordion();
-//        }
-//    });
+
+function showNextModal(nextSectionId, currentSectionId) {
+    // val = validateSection(currentSectionId);
+    console.log("this Modal")
+    val = true
+
+    if (val) {
+        var activeLink = document.querySelector(".sidebar .nav-link.active");
+        console.log(activeLink);
+        var nextLink = activeLink.parentElement.nextElementSibling.querySelector(".nav-link");
+        if (nextLink) {
+            nextLink.classList.remove("disabled");
+            showSection(nextSectionId, nextLink);
+        }
+    }
+}
+function toggleFieldBasedOnRadio(inputName, fieldIdToToggle, toggleValue = "Yes") {
+    const radios = document.querySelectorAll(`input[name="${inputName}"]`);
+    let shouldShowField = false;
+
+    radios.forEach(radio => {
+        if (radio.checked && radio.dataset.text === toggleValue) {
+            shouldShowField = true;
+        }
+    });
+
+    const fieldToToggle = document.getElementById(fieldIdToToggle);
+    fieldToToggle.style.display = shouldShowField ? 'block' : 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initial check on page load
+    toggleFieldBasedOnRadio('is_member_of_primary_coop', 'primary-coop-field');
+    toggleFieldBasedOnRadio('is_member_of_coop_union', 'coop-union-field');
+    toggleFieldBasedOnRadio('in_farmer_cluster', 'primary-commodity-field');
+    toggleFieldBasedOnRadio('in_farmer_cluster', 'role-in-cluster-field');
+
+    // Attach event listeners to the radio buttons
+    const primaryCoopRadios = document.querySelectorAll('input[name="is_member_of_primary_coop"]');
+    primaryCoopRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            toggleFieldBasedOnRadio('is_member_of_primary_coop', 'primary-coop-field');
+        });
+    });
+
+    const coopUnionRadios = document.querySelectorAll('input[name="is_member_of_coop_union"]');
+    coopUnionRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            toggleFieldBasedOnRadio('is_member_of_coop_union', 'coop-union-field');
+        });
+    });
+
+    const isMemberRadios = document.querySelectorAll('input[name="in_farmer_cluster"]');
+    isMemberRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            toggleFieldBasedOnRadio('in_farmer_cluster', 'primary-commodity-field');
+            toggleFieldBasedOnRadio('in_farmer_cluster', 'role-in-cluster-field');
+        });
+    });
+
+});
